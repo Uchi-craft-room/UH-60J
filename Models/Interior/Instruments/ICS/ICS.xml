@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!-- CTL 32 Nav2 Control for VIR-32 receiver
+Active and preset displayed +
+6 frequency memory storage
+2.375"W x 2.625"H
+Freq. range 108.000 - 117.975 (normal) 
+Strap option 133.00 - 135.95
+ 05 khz spacing
+Syd Adams
+ -->
+
+<PropertyList>
+
+    <path>ICS.ac</path>
+    
+    <animation>
+       <type>range</type>
+       <min-m>0</min-m>
+       <max-m>5</max-m>
+    </animation>
+ 
+  <animation>
+ <object-name>CTL-32</object-name>
+  <object-name>CTL-32.pwr</object-name>
+  <object-name>freq.knob</object-name>
+  <object-name>Switch</object-name>
+  <object-name>SwitchRot</object-name>
+  <object-name>Switch.001</object-name>
+  <object-name>SwitchRot.001</object-name>
+  <object-name>Switch.002</object-name>
+  <object-name>SwitchRot.002</object-name>
+  <object-name>Switch.003</object-name>
+  <object-name>SwitchRot.003</object-name>
+  <object-name>Switch.004</object-name>
+  <object-name>SwitchRot.004</object-name>
+  <object-name>Switch.005</object-name>
+  <object-name>SwitchRot.005</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation> 
+
+</PropertyList>
+
+
+
+
+
+
+

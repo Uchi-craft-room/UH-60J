@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<!-- CTL 22 Comm1 Control for VHF-22 tranceiver
+Active and preset displayed +
+6 frequency memory storage
+2.375"W x 2.625"H
+Freq. range 118.000 - 135.975 (normal) @ 25 khz spacing
+Syd Adams
+ -->
+
+<PropertyList>
+
+    <path>uhf.ac</path>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CTL-22.pwr</object-name>
+        <property>instrumentation/comm/volume</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>0.6</ind><dep>30</dep></entry>
+        </interpolation>
+        <center>
+            <x-m> 0.007</x-m>
+            <y-m>-0.046</y-m>
+            <z-m> 0.029</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>freq.knob</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.008</x-m>
+            <y-m>-0.038</y-m>
+            <z-m>-0.005</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>freq.knob.001</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.007</x-m>
+            <y-m> 0.053</y-m>
+            <z-m>-0.007</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.001</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.002</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.003</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.004</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.005</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.006</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>pwr.off</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/comm/volume</property>
+            <value>0</value>
+            </binding>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/comm/serviceable</property>
+            <value>0</value>
+        </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>pwr.on</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/comm/volume</property>
+                <value>0.6</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/comm/serviceable</property>
+                <value>1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq.knob.001</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>-25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq.knob.001</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq.knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>-1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq.knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+
+
+
+  <animation>
+<object-name>freq.dec</object-name>
+<object-name>freq.001</object-name>
+<object-name>freq.002</object-name>
+<object-name>freq.003</object-name>
+<object-name>freq.004</object-name>
+<object-name>freq.005</object-name>
+<object-name>freq.006</object-name>
+  <object-name>CTL-22</object-name>
+  <object-name>CTL-22.toggle</object-name>
+  <object-name>CTL-22.pwr</object-name>
+  <object-name>CTL-22.vol</object-name>
+  <object-name>freq.knob</object-name>
+  <object-name>freq.knob.001</object-name>
+<object-name>sto.btn</object-name>
+  <object-name>test.btn</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation> 
+ 
+</PropertyList>
+
+
+

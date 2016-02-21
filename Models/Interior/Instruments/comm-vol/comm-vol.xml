@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>comm-vol.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+        <object-name>knob_1</object-name>
+	<object-name>knob_2</object-name>
+	<object-name>knob_3</object-name>
+	<object-name>knob_4</object-name>
+	<object-name>knob_5</object-name>
+        <object-name>comm1_btn</object-name>
+        <object-name>comm2_btn</object-name>
+        <object-name>vor_btn</object-name>
+        <object-name>tacan_btn</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>comm1_on</object-name>
+        <object-name>comm2_on</object-name>
+        <object-name>vor_on</object-name>
+        <object-name>tacan_on</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+
+
+<!-- COMM1 -->
+    <animation>
+        <type>rotate</type>
+        <object-name>knob_2</object-name>
+        <property>instrumentation/comm/volume</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>270</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.020</x-m>
+            <y-m>-0.024</y-m>
+            <z-m>-0.105</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_2</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/volume</property>
+                <step>-0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_2</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm/volume</property>
+                <step>0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>comm1_pwr</object-name>
+        <action>
+            <button>o</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>instrumentation/comm/power-btn</property>
+            </binding>
+        </action>
+    </animation>
+
+   <animation>
+        <type>select</type>
+        <object-name>comm1_on</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/comm/power-btn</property>
+            </and>
+        </condition>
+    </animation>
+
+
+
+<!-- COMM2 -->
+    <animation>
+        <type>rotate</type>
+        <object-name>knob_3</object-name>
+        <property>instrumentation/comm[1]/volume</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>270</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.020</x-m>
+            <y-m>0.001</y-m>
+            <z-m>-0.105</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_3</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/volume</property>
+                <step>-0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_3</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/comm[1]/volume</property>
+                <step>0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>comm2_pwr</object-name>
+        <action>
+            <button>o</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>instrumentation/comm[1]/power-btn</property>
+            </binding>
+        </action>
+    </animation>
+
+   <animation>
+        <type>select</type>
+        <object-name>comm2_on</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/comm[1]/power-btn</property>
+            </and>
+        </condition>
+    </animation>
+
+<!-- VOR -->
+    <animation>
+        <type>rotate</type>
+        <object-name>knob_4</object-name>
+        <property>instrumentation/nav/volume</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>270</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.020</x-m>
+            <y-m>0.024</y-m>
+            <z-m>-0.105</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_4</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/volume</property>
+                <step>-0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>knob_4</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav/volume</property>
+                <step>0.1</step>
+                <min> 0 </min>
+                <max> 1 </max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>vor_pwr</object-name>
+        <action>
+            <button>o</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>instrumentation/nav/audio-btn</property>
+            </binding>
+        </action>
+    </animation>
+
+   <animation>
+        <type>select</type>
+        <object-name>vor_on</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/nav/audio-btn</property>
+            </and>
+        </condition>
+    </animation>
+
+<!-- TACAN -->
+    <animation>
+        <type>pick</type>
+        <object-name>tacan_pwr</object-name>
+        <action>
+            <button>o</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>instrumentation/tacan/serviceable</property>
+            </binding>
+        </action>
+    </animation>
+
+   <animation>
+        <type>select</type>
+        <object-name>tacan_on</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/tacan/serviceable</property>
+            </and>
+        </condition>
+    </animation>
+
+
+    
+     <animation>
+	<type>range</type>
+	<min-m>  0 </min-m>
+	<max-m> 5 </max-m>
+     </animation>
+
+</PropertyList>
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>console.ac</path>
+
+<!-- ******************** RIGHT ****************** -->
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/AFCS/AFCS.xml</path>
+    <offsets>
+      <x-m> 0.13 </x-m>
+      <y-m> 0.120 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/stabi-contr/stabi-contr.xml</path>
+    <offsets>
+      <x-m> 0.407 </x-m>
+      <y-m> 0.120 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/blade-fold/blade-fold.xml</path>
+    <offsets>
+      <x-m> 0.762 </x-m>
+      <y-m> 0.120 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- ******************** CENTER *************************** -->
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/CDI2/CDI2.xml</path>
+    <offsets>
+      <x-m> 0.130 </x-m>
+      <y-m> -0.0125 </y-m>
+      <z-m> 0.002 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/kt70/kt70.xml</path>
+    <offsets>
+      <x-m> 0.500 </x-m>
+      <y-m> -0.0125 </y-m>
+      <z-m> 0.000 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/jett-contr/jett-contr.xml</path>
+    <offsets>
+      <x-m> 0.535 </x-m>
+      <y-m> -0.0125 </y-m>
+      <z-m> 0.000 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- ********************* LEFT ******************** -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/CDI1/CDI1.xml</path>
+    <offsets>
+      <x-m> 0.155 </x-m>
+      <y-m> -0.145 </y-m>
+      <z-m> 0.002 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/comm-vol/comm-vol.xml</path>
+    <offsets>
+      <x-m> 0.476 </x-m>
+      <y-m> -0.145 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- ********************* LEVER ***************** -->
+
+<!--parkingBrake-->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/parking-brake/brake-knob.xml</path>
+    <offsets>
+      <x-m> 0.600 </x-m>
+      <y-m> 0.200 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/parking-brake/brake-knob.xml</path>
+    <offsets>
+      <x-m> 0.600 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -90 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+
+  <!-- FIREEXT --> 
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/FireExt/FireExt.xml</path>
+    <offsets>
+      <x-m> 1.00 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> -0.2 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 90 </heading-deg>
+    </offsets>
+  </model>
+
+
+</PropertyList>

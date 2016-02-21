@@ -1,0 +1,65 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
+MATERIAL "DefaultWhite.006" rgb 1 1 1 amb 1 1 1 emis 0 0 0 spec 0.5 0.5 0.5 shi 64 trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "panel2"
+data 6
+panel2
+texture "plate.png"
+texrep 1 1
+crease 30.000000
+numvert 8
+-0.078068 0.696524 -0.297829
+-0.078068 0.150289 -0.297829
+-0.078068 0.150289 0.29783
+-0.078068 0.696524 0.297829
+0.001157 0.696524 -0.29783
+0.001157 -0.000657 -0.297829
+0.001157 -0.000657 0.29783
+0.001157 0.696524 0.29783
+numsurf 6
+SURF 0x00
+mat 1
+refs 4
+0 1.0 1.0
+1 1.0 0.0
+2 0.0 0.0
+3 0.0 1.0
+SURF 0x00
+mat 1
+refs 4
+4 0.0 0.0
+7 0.0 1.0
+6 1.0 1.0
+5 1.0 0.0
+SURF 0x00
+mat 1
+refs 4
+0 0.0 0.0
+4 0.0 1.0
+5 1.0 1.0
+1 1.0 0.0
+SURF 0x00
+mat 1
+refs 4
+1 0.0 0.0
+5 0.0 1.0
+6 1.0 1.0
+2 1.0 0.0
+SURF 0x00
+mat 1
+refs 4
+2 0.0 0.0
+6 0.0 1.0
+7 1.0 1.0
+3 1.0 0.0
+SURF 0x00
+mat 1
+refs 4
+4 1.0 1.0
+0 1.0 0.0
+3 0.0 0.0
+7 0.0 1.0
+kids 0

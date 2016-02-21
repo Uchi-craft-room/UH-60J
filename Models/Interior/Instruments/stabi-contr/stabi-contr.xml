@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>stabi-contr.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>stabi-auto</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+   <animation>
+        <type>select</type>
+        <object-name>stabi-auto</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+<!--TAIL-WHEEL-LOCK -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>tail-wheel-lock</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/gear/tailwheel-lock</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>tail-wheel-lock</object-name>
+    <property>controls/gear/tailwheel-lock</property>
+    <factor>60</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> -0.008 </y-m>
+      <z-m> -0.061 </z-m>
+    </center>
+  </animation>
+
+<!--RAST switch -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>RAST_switch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/gear/tailhook</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>RAST_switch</object-name>
+    <property>controls/gear/tailhook</property>
+    <factor>60</factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> -0.008 </y-m>
+      <z-m> -0.061 </z-m>
+    </center>
+  </animation>
+
+<!--TAIL-BOOM switch -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>tail-boom_fold</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/rotor/tailboom-fold</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>tail-boom_fold</object-name>
+    <property>controls/rotor/tailboom-fold</property>
+    <factor>60</factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> -0.008 </y-m>
+      <z-m> -0.061 </z-m>
+    </center>
+  </animation>
+
+    
+     <animation>
+	<type>range</type>
+	<min-m>  0 </min-m>
+	<max-m> 5 </max-m>
+     </animation>
+
+</PropertyList>
+
+
+
+
+
+

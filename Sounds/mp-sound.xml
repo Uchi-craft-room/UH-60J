@@ -1,0 +1,857 @@
+<?xml version="1.0"?>
+<!--
+	+x = aft
+	+y = left
+	+z = up
+-->
+
+<PropertyList>
+	<fx>
+
+		<RAST>
+			<name>RAST</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/RAST.wav</path>
+			<condition>
+                            <and>
+                               <greater-than>
+				<property>/gear/tailhook/position-norm</property>
+                                <value>0.05</value>
+                               </greater-than>
+                                <less-than>
+				<property>/gear/tailhook/position-norm</property>
+                                <value>.63</value>
+                               </less-than>
+                            </and>
+			</condition>
+			<volume>
+			   <factor>0.3</factor>
+			</volume>
+		</RAST>
+
+
+		<door>
+			<name>door</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rumble.wav</path>
+			<condition>
+                            <and>
+                               <greater-than>
+				<property>instrumentation/doors/crew/position-norm</property>
+                                <value>0.05</value>
+                               </greater-than>
+                                <less-than>
+				<property>instrumentation/doors/crew/position-norm</property>
+                                <value>.95</value>
+                               </less-than>
+                            </and>
+			</condition>
+			<volume>
+                          <factor>0.3</factor>
+                        </volume>
+		</door>
+
+		<door>
+			<name>door-hatch</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/hatch.wav</path>
+			<condition>
+                               <equals>
+				<property>instrumentation/doors/crew/position-norm</property>
+                                <value>0.00</value>
+                               </equals>
+			</condition>
+			<volume>
+                         <factor>0.3</factor>
+                        </volume>
+		</door>
+
+
+
+		<starter>
+			<name>starter0_start</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/starter_start.wav</path>
+			<condition>
+				<property>controls/engines/engine[0]/starter</property>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+			<position>
+				<x>-1.00</x>
+				<y>0.00</y>
+				<z>-0.5</z>
+			</position>
+			<reference-dist>5</reference-dist>
+			<max-dist>10</max-dist>
+		</starter>
+
+		<starter>
+			<name>starter0_loop</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/starter_loop.wav</path>
+			<condition>
+				<property>controls/engines/engine[0]/starter</property>
+			</condition>
+			<delay-sec>11.6</delay-sec>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+			<position>
+				<x>-1.00</x>
+				<y>0.00</y>
+				<z>-0.5</z>
+			</position>
+			<reference-dist>5</reference-dist>
+			<max-dist>10</max-dist>
+		</starter>
+
+		<starter>
+			<name>starter0_stop</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/starter_stop.wav</path>
+			<condition>
+				<not>
+					<property>controls/engines/engine[0]/starter</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.3</factor>
+			</volume>
+			<position>
+				<x>-1.00</x>
+				<y>0.00</y>
+				<z>-0.5</z>
+			</position>
+			<reference-dist>5</reference-dist>
+			<max-dist>10</max-dist>
+		</starter>
+
+
+		<engine>
+			<name>turbine0-start</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/turbine_start.wav</path>
+			<condition>
+				<property>engines/engine[0]/running</property>
+			</condition>
+			<volume>
+				<factor>0.03</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>5</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+		<engine>
+			<name>turbine0-loop</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/turbine_loop.wav</path>
+			<condition>
+				<property>engines/engine[0]/running</property>
+			</condition>
+			<delay-sec>7.5</delay-sec>
+			<volume>
+				<factor>0.03</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>5</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+		<engine>
+			<name>turbine0-shutdown</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/turbine_shutdown.wav</path>
+			<condition>
+				<not>
+					<property>engines/engine[0]/running</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.03</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>5</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+
+
+		<engine>
+			<name>exhaust0-start</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/exhaust_start.wav</path>
+			<condition>
+				<property>engines/engine[0]/running</property>
+			</condition>
+			<volume>
+				<factor>0.02</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>10</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+		<engine>
+			<name>exhaust0-loop</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/exhaust_loop.wav</path>
+			<condition>
+				<property>engines/engine[0]/running</property>
+			</condition>
+			<delay-sec>11.5</delay-sec>
+			<volume>
+				<factor>0.02</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>10</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+		<engine>
+			<name>exhaust0-shutdown</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/exhaust_shutdown.wav</path>
+			<condition>
+				<not>
+					<property>engines/engine[0]/running</property>
+				</not>
+			</condition>
+			<volume>
+				<factor>0.02</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>10</factor>
+			</volume>
+			<reference-dist>50</reference-dist>
+			<max-dist>200</max-dist>
+		</engine>
+
+
+
+		<rotor>
+			<name>rotor-outside</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rotor.wav</path>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>rotors/main/rpm</property>
+						<value>50</value>
+					</greater-than>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<property>rotors/main/rpm</property>
+				<factor>0.002</factor>
+			</volume>
+			<pitch>
+				<property>rotors/main/rpm</property>
+				<factor>0.002262</factor>
+				<offset>0</offset>
+				<min>0</min>
+				<max>0.7</max>
+			</pitch>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</rotor>
+
+		<rotor>
+			<name>rotor-inside</name>
+			<mode>looped</mode>
+			<path>Sounds/rotor.wav</path>
+			<path>Aircraft/SH-60J/Sounds/rotor.wav</path>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>rotors/main/rpm</property>
+						<value>50</value>
+					</greater-than>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<factor>0.4</factor>
+			</volume>
+			<volume>
+				<property>rotors/main/rpm</property>
+				<factor>0.002</factor>
+			</volume>
+			<pitch>
+				<property>rotors/main/rpm</property>
+				<factor>0.002262</factor>
+				<offset>0</offset>
+				<min>0</min>
+				<max>1.0</max>
+			</pitch>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</rotor>
+
+
+		<rotor>
+			<name>inside</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/inside_noflap.wav</path>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>rotors/main/rpm</property>
+						<value>50</value>
+					</greater-than>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<property>rotors/main/rpm</property>
+				<factor>0.001</factor>
+			</volume>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</rotor>
+
+		<rotor>
+			<name>stall</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rotor_stall.wav</path>
+			<condition>
+				<and>
+					<greater-than>
+						<property>rotors/main/rpm</property>
+						<value>50</value>
+					</greater-than>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<property>sim/model/SH-60J/sound/volume</property>
+				<factor>0.8</factor>
+			</volume>
+			<volume>
+				<property>rotors/main/stall-filtered</property>
+				<factor>75</factor>
+				<max>1.0</max>
+			</volume>
+			<pitch>
+				<property>rotors/main/rpm</property>
+				<factor>0.002262</factor>
+				<offset>0</offset>
+				<max>1.0</max>
+			</pitch>
+			<reference-dist>1000</reference-dist>
+			<max-dist>3000</max-dist>
+		</rotor>
+
+		<rotor>
+			<name>blade-vortex-interaction</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/blade_vortex.wav</path>
+			<condition>
+				<greater-than>
+					<property>sim/sound/vibration</property>
+					<value>0.01</value>
+				</greater-than>
+			</condition>
+			<volume>
+				<property>sim/sound/vibration</property>
+			</volume>
+			<pitch>
+				<property>rotors/main/rpm</property>
+				<factor>0.002262</factor>
+				<offset>0</offset>
+				<min>0</min>
+				<max>1.0</max>
+			</pitch>
+			<reference-dist>1000</reference-dist>
+			<max-dist>3000</max-dist>
+		</rotor>
+
+		<overspeed>
+			<name>overspeed</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/overspeed.wav</path>
+			<condition>
+				<greater-than>
+					<property>velocities/airspeed-kt</property>
+					<value>150</value>
+				</greater-than>
+				<equals>
+					<property>sim/current-view/view-number</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<volume>
+				<factor>1.0</factor>
+			</volume>
+			<pitch>
+				<factor>0.1</factor>
+			</pitch>
+			<reference-dist>1.0</reference-dist>
+			<max-dist>2.0</max-dist>
+		</overspeed>
+
+		<warning>
+			<name>650 Hz</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/warn650.wav</path>
+			<condition>
+				<property>sim/sound/warn650</property>
+			</condition>
+			<reference-dist>0.5</reference-dist>
+			<max-dist>1.0</max-dist>
+		</warning>
+
+		<warning>
+			<name>2600 Hz</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/warn2600.wav</path>
+			<condition>
+				<property>sim/sound/warn2600</property>
+			</condition>
+			<reference-dist>0.5</reference-dist>
+			<max-dist>1.0</max-dist>
+		</warning>
+
+		<contact>
+			<name>ground contact</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/helicopter-skid.wav</path>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<factor>0.8</factor>
+			</volume>
+			<pitch>
+				<factor>0.01</factor>
+			</pitch>
+			<reference-dist>5.0</reference-dist>
+			<max-dist>10.0</max-dist>
+		</contact>
+
+		<contact>
+			<name>ground contact</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/helicopter-skid.wav</path>
+			<condition>
+				<property>gear/gear[1]/wow</property>
+			</condition>
+			<volume>
+				<factor>0.8</factor>
+			</volume>
+			<pitch>
+				<factor>0.01</factor>
+			</pitch>
+			<reference-dist>5.0</reference-dist>
+			<max-dist>10.0</max-dist>
+		</contact>
+
+		<contact>
+			<name>ground contact</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/helicopter-skid.wav</path>
+			<condition>
+				<property>gear/gear[2]/wow</property>
+			</condition>
+			<volume>
+				<factor>0.8</factor>
+			</volume>
+			<pitch>
+				<factor>0.01</factor>
+			</pitch>
+			<reference-dist>5.0</reference-dist>
+			<max-dist>10.0</max-dist>
+		</contact>
+
+		<contact>
+			<name>ground contact</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/helicopter-skid.wav</path>
+			<condition>
+				<property>gear/gear[3]/wow</property>
+			</condition>
+			<volume>
+				<factor>0.8</factor>
+			</volume>
+			<pitch>
+				<factor>0.01</factor>
+			</pitch>
+			<reference-dist>5.0</reference-dist>
+			<max-dist>10.0</max-dist>
+		</contact>
+
+		<slide>
+			<name>skid sliding1</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[0]/wow</property>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/slide[0]/volume</property>
+				<max>1</max>
+			</volume>
+			<pitch>
+				<property>sim/model/SH-60J/sound/slide[0]/pitch</property>
+			</pitch>
+		</slide>
+
+		<slide>
+			<name>skid sliding2</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[1]/wow</property>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/slide[1]/volume</property>
+				<max>1</max>
+			</volume>
+			<pitch>
+				<property>sim/model/SH-60J/sound/slide[1]/pitch</property>
+			</pitch>
+		</slide>
+
+		<slide>
+			<name>skid sliding3</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[2]/wow</property>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/slide[2]/volume</property>
+				<max>1</max>
+			</volume>
+			<pitch>
+				<property>sim/model/SH-60J/sound/slide[2]/pitch</property>
+			</pitch>
+		</slide>
+
+		<slide>
+			<name>skid sliding4</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[3]/wow</property>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<volume>
+				<property>sim/model/SH-60J/sound/slide[3]/volume</property>
+				<max>1</max>
+			</volume>
+			<pitch>
+				<property>sim/model/SH-60J/sound/slide[3]/pitch</property>
+			</pitch>
+		</slide>
+
+		<wind>
+			<name>wind</name>
+			<mode>looped</mode>
+			<path>Aircraft/SH-60J/Sounds/wind.wav</path>
+			<condition>
+				<and>
+					<property>velocities/airspeed-kt</property>
+					<not>
+						<property>sim/crashed</property>
+					</not>
+				</and>
+			</condition>
+			<volume>
+				<property>position/altitude-ft</property>
+				<factor>-0.000015</factor>
+				<offset>1.0</offset>
+				<min>0.1</min>
+				<max>1.0</max>
+			</volume>
+			<volume>
+				<property>velocities/airspeed-kt</property>
+				<factor>0.0015</factor>
+				<min>0.03</min>
+				<max>0.25</max>
+			</volume>
+			<pitch>
+				<property>velocities/airspeed-kt</property>
+				<factor>0.01</factor>
+				<offset>1.25</offset>
+			</pitch>
+			<reference-dist>3</reference-dist>
+			<max-dist>4</max-dist>
+		</wind>
+
+		<crash>
+			<name>intense ground contact</name>
+			<mode>once</mode>
+			<path>Aircraft/SH-60J/Sounds/crash.wav</path>
+			<property>sim/crashed</property>
+			<volume>
+				<factor>1</factor>
+			</volume>
+			<pitch>
+				<factor>0.1</factor>
+			</pitch>
+			<reference-dist>100</reference-dist>
+			<max-dist>500</max-dist>
+		</crash>
+		
+          <rotor>
+            <name>rotorinside1</name>
+            <mode>looped</mode>
+            <path>Aircraft/SH-60J/Sounds/inside_noflap.wav</path>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>rotors/main/rpm</property>
+                        <value>50</value>
+                    </greater-than>
+                    <not>
+                        <property>sim/crashed</property>
+                    </not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+            <volume>
+                <property>rotors/gear/torque-sound-filtered</property>
+            </volume>
+            <pitch>
+                <property>rotors/main/rpm</property>
+                <factor>0.00325</factor>
+                <offset>-0.0</offset>
+                <max>2.5</max>
+            </pitch>
+            <reference-dist>500</reference-dist>
+            <max-dist>1000</max-dist>
+        </rotor>
+
+   <!--                  Toggle Switches                  -->     
+    <click> 
+      <name>Battery on</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <property>controls/electric/battery-switch</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Battery off</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <not> 
+          <property>controls/electric/battery-switch</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Fuel Pump on</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <property>controls/engines/engine/fuel-pump</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Fuel Pump off</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <not> 
+          <property>controls/engines/engine/fuel-pump</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+ 
+    <click>
+      <name>Landing Light On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/switches/landing-light</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+      
+    <click>
+      <name>Landing Light Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/switches/landing-light</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Magnetos-off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/engines/engine/magnetos</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Strobe Lights White</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <equals>
+          <property>controls/switches/strobes</property>
+          <value>1</value>
+        </equals>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Strobe Lights Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not> 
+          <property>controls/switches/strobes</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>Avionics Master On</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <property>controls/switches/avionic-master</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+ 
+    <click> 
+      <name>Avionics Master Off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>controls/switches/avionic-master</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <!--                  Toggle Switches                  -->     
+    <click> 
+      <name>click on</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <property>sim/sound/click</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+    <click> 
+      <name>click off</name>
+      <path>Sounds/click.wav</path>
+      <condition>
+        <not>
+          <property>sim/sound/click</property>
+        </not>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+      </volume>
+    </click>
+
+		
+  </fx>
+</PropertyList>
+

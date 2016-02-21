@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>tacan.ac</path>
+
+    <animation>
+        <type>select</type>
+        <object-name>freq.001</object-name>
+        <object-name>freq.002</object-name>
+        <object-name>freq.003</object-name>
+        <object-name>freq.004</object-name>
+        <object-name>freq.005</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/nav</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>xmt.annun</object-name>
+        <condition>
+             <not>
+               <equals>
+                <property>instrumentation/tacan/display/x-shift</property>
+                <value> 0 </value>
+               </equals>
+             </not>
+        </condition>
+    </animation>  
+
+    <animation>
+        <type>rotate</type>
+        <object-name>CTL-32.vol</object-name>
+        <property>instrumentation/tacan/serviceable</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>-60</dep></entry>
+            <entry><ind>1.0</ind><dep>30</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0.014</x-m>
+            <y-m>-0.033</y-m>
+            <z-m>-0.020</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>freq.knob.001</object-name>
+	<condition>
+		<equals>
+		<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+		<value>Y</value>
+		</equals>
+	</condition>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.001</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[1]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.002</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[2]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>freq.003</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>freq.005</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>Y</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>freq.004</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>X</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>pwr.off</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/tacan/serviceable</property>
+            <value>false</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>pwr.on</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/tacan/serviceable</property>
+                <value>true</value>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq-X</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+                <value>X</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>freq-Y</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+                <value>Y</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>CTL-32.pwr</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>1</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>CTL-32.pwr</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+ 
+  <animation>
+  <object-name>CTL-32.toggle</object-name>
+  <object-name>CTL-32.pwr</object-name>
+  <object-name>CTL-32.vol</object-name>
+  <object-name>freq.knob</object-name>
+  <object-name>sto.btn</object-name>
+  <object-name>test.btn</object-name>
+  <object-name>CTL-32</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>0.5</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>freq.001</object-name>
+        <object-name>freq.002</object-name>
+        <object-name>freq.003</object-name>
+        <object-name>freq.dec</object-name>
+        <object-name>freq.004</object-name>
+        <object-name>freq.005</object-name>
+        <object-name>display</object-name>
+  <object-name>mem.annun</object-name>
+   <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>0.5</red>
+        <green>0.5</green>
+        <blue>0.4</blue>
+      </emission>
+  </animation> 
+</PropertyList>
+
+
+
+
+
+

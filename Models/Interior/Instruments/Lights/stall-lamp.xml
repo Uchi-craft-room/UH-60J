@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <path>redlight.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>light</object-name>
+    <condition>
+    <and>
+     <less-than>
+       <property>velocities/airspeed-kt</property>
+       <value>60</value>
+     </less-than>
+    <not>
+       <property>gear/gear[0]/wow</property>
+       <property>gear/gear[1]/wow</property>
+       <property>gear/gear[2]/wow</property>
+     </not>
+    </and>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+
+

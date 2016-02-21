@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>blade-fold.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+        <object-name>folding_switch</object-name>
+        <object-name>master_switch</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation>
+
+  <animation>
+        <object-name>stabi-auto</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+<!--FOLDING switch -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>folding_switch</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/rotor/folding-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>folding_switch</object-name>
+    <property>/controls/rotor/folding-switch</property>
+    <factor>30</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+    <center>
+      <x-m> 0.005 </x-m>
+      <y-m> 0.029 </y-m>
+      <z-m> -0.014 </z-m>
+    </center>
+  </animation>
+
+
+    
+     <animation>
+	<type>range</type>
+	<min-m>  0 </min-m>
+	<max-m> 10 </max-m>
+     </animation>
+
+</PropertyList>
+
+
+
+
+
+

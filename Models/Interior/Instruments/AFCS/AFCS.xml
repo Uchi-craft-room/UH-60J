@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>AFCS.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+        <object-name>wing_lvl_btn</object-name>
+        <object-name>dg_hdg_btn</object-name>
+        <object-name>true_hdg_btn</object-name>
+        <object-name>with_pwr_btn</object-name>
+        <object-name>with_pitch_btn</object-name>
+        <object-name>radio_alt_btn</object-name>
+        <object-name>alt_btn</object-name>
+        <object-name>pitch_btn</object-name>
+        <object-name>climb_btn</object-name>
+        <object-name>hdg_btn</object-name>
+        <object-name>vl_btn</object-name>
+        <object-name>pitch_alt_btn</object-name>
+        <object-name>alt_knob</object-name>
+        <object-name>climb_knob</object-name>
+        <object-name>pitch_knob</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>wing_lvl</object-name>
+        <object-name>wing_lvl.001</object-name>
+        <object-name>dg_hdg</object-name>
+        <object-name>dg_hdg.001</object-name>
+        <object-name>true_hdg</object-name>
+        <object-name>true_hdg.001</object-name>
+        <object-name>with_pwr</object-name>
+        <object-name>with_pwr.001</object-name>
+        <object-name>with_pitch</object-name>
+        <object-name>with_pitch.001</object-name>
+        <object-name>radio_alt</object-name>
+        <object-name>radio_alt.001</object-name>
+        <object-name>alt</object-name>
+        <object-name>alt.001</object-name>
+        <object-name>pitch</object-name>
+        <object-name>pitch.001</object-name>
+        <object-name>climb</object-name>
+        <object-name>climb.001</object-name>
+        <object-name>hdg</object-name>
+        <object-name>vl</object-name>
+        <object-name>pitch_alt</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+<!-- WING LVL -->
+
+    <animation>
+        <type>select</type>
+        <object-name>wing_lvl</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>wing-leveler</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>wing_lvl.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>wing-leveler</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>wing_lvl_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>property-assign</command>
+              <property>/autopilot/locks/heading</property>
+              <value>wing-leveler</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- DG HDG -->
+
+    <animation>
+        <type>select</type>
+        <object-name>dg_hdg</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>dg-heading-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>dg_hdg.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>dg-heading-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>dg_hdg_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/heading</property>
+            <value>dg-heading-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- TRUE HDG -->
+
+    <animation>
+        <type>select</type>
+        <object-name>true_hdg</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>true-heading-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>true_hdg.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/heading</property>
+                <value>true-heading-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>true_hdg_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/heading</property>
+            <value>true-heading-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- SPEED with THROTTLE -->
+
+    <animation>
+        <type>select</type>
+        <object-name>with_pwr</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/speed</property>
+                <value>speed-with-throttle</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>with_pwr.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/speed</property>
+                <value>speed-with-throttle</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>with_pwr_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/speed</property>
+            <value>speed-with-throttle</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- SPEED with PITCH -->
+
+    <animation>
+        <type>select</type>
+        <object-name>with_pitch</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/speed</property>
+                <value>speed-with-pitch-trim</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>with_pitch.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/speed</property>
+                <value>speed-with-pitch-trim</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>with_pitch_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/speed</property>
+            <value>speed-with-pitch-trim</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- RADIO ALT -->
+
+    <animation>
+        <type>select</type>
+        <object-name>radio_alt</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>agl-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>radio_alt.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>agl-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>radio_alt_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/altitude</property>
+            <value>agl-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!--  ALT HOLD-->
+
+    <animation>
+        <type>select</type>
+        <object-name>alt</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>altitude-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>alt.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>altitude-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>alt_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/altitude</property>
+            <value>altitude-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- PITCH HOLD -->
+
+    <animation>
+        <type>select</type>
+        <object-name>pitch</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>pitch-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>pitch.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>pitch-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>pitch_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>/autopilot/locks/altitude</property>
+            <value>pitch-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- VERTICAL SPEED HOLD -->
+
+    <animation>
+        <type>select</type>
+        <object-name>climb</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>vertical-speed-hold</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>climb.001</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+                <property>/autopilot/locks/altitude</property>
+                <value>vertical-speed-hold</value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>climb_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>property-assign</command>
+              <property>/autopilot/locks/altitude</property>
+              <value>vertical-speed-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- HDG -->
+
+    <animation>
+        <type>select</type>
+        <object-name>hdg</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+              <property>/autopilot/locks/heading</property>
+              <value></value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>hdg_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>property-assign</command>
+              <property>/autopilot/locks/heading</property>
+              <value></value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- SPEED -->
+
+    <animation>
+        <type>select</type>
+        <object-name>vl</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+              <property>/autopilot/locks/speed</property>
+              <value></value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>vl_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>property-assign</command>
+              <property>/autopilot/locks/speed</property>
+              <value></value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- PITCH ALT -->
+
+    <animation>
+        <type>select</type>
+        <object-name>pitch_alt</object-name>
+        <condition>
+            <and>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+            <not>
+            <equals>
+              <property>/autopilot/locks/altitude</property>
+              <value></value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>pitch_alt_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+              <command>property-assign</command>
+              <property>/autopilot/locks/altitude</property>
+              <value></value>
+            </binding>
+        </action>
+    </animation>
+
+
+<!-- RADIO ALT SET -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>alt_knob</object-name>
+        <property>autopilot/settings/target-agl-ft</property>
+        <interpolation>
+            <entry><ind>  0</ind><dep>   0</dep></entry>
+            <entry><ind>500</ind><dep> 300</dep></entry>
+        </interpolation>
+        <center>
+            <x-m> 0.024</x-m>
+            <y-m>-0.031</y-m>
+            <z-m>-0.196</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>alt_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-agl-ft</property>
+                <step>50</step>
+                <min>0</min>
+                <max>500</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>alt_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-agl-ft</property>
+                <step>-50</step>
+                <min>0</min>
+                <max>500</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- CLIMB SET -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>climb_knob</object-name>
+        <property>autopilot/settings/vertical-speed-fpm</property>
+        <interpolation>
+            <entry><ind>-1500</ind><dep> -90</dep></entry>
+            <entry><ind>   0</ind><dep>   0</dep></entry>
+            <entry><ind> 1500</ind><dep>  90</dep></entry>
+            <entry><ind> 3000</ind><dep> 180</dep></entry>
+        </interpolation>
+        <center>
+            <x-m> 0.014</x-m>
+            <y-m> 0.031</y-m>
+            <z-m>-0.196</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>climb_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step>500</step>
+                <min>-1500</min>
+                <max> 3000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>climb_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step>-500</step>
+                <min>-1500</min>
+                <max> 3000</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- PITCH SET -->
+
+    <animation>
+        <type>rotate</type>
+        <object-name>pitch_knob</object-name>
+        <property>autopilot/settings/target-pitch-deg</property>
+        <interpolation>
+            <entry><ind>-15</ind><dep> -90</dep></entry>
+            <entry><ind>   0</ind><dep>   0</dep></entry>
+            <entry><ind> 15</ind><dep>  90</dep></entry>
+        </interpolation>
+        <center>
+            <x-m> 0.012</x-m>
+            <y-m> 0.031</y-m>
+            <z-m>-0.251</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y> 0</y>
+            <z> 0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>pitch_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <step>5</step>
+                <min>-15</min>
+                <max> 15</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>pitch_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <step>-5</step>
+                <min>-15</min>
+                <max> 15</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    
+     <animation>
+	<type>range</type>
+	<min-m>  0 </min-m>
+	<max-m> 10 </max-m>
+     </animation>
+
+</PropertyList>
+
+
+
+
+
+

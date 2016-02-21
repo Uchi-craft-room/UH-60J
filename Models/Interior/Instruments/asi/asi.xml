@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>asi.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+    <object-name>face</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission> 
+  </animation>    
+
+  <animation>
+    <type>material</type>
+    <object-name>needle</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   1.0 </red>
+      <green> 0.2 </green>
+      <blue>  0.2 </blue>
+    </emission> 
+  </animation>   
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  0</dep></entry>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+                        <entry><ind>  10</ind><dep>  10</dep></entry>
+			<entry><ind>  50</ind><dep>  68</dep></entry>
+			<entry><ind>  100</ind><dep> 139</dep></entry>
+			<entry><ind>  150</ind><dep> 209</dep></entry>
+			<entry><ind>  200</ind><dep> 282</dep></entry>
+			<entry><ind>  250</ind><dep> 354</dep></entry>
+		</interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>
+
+
+
+
+

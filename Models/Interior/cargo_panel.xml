@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/AFCS/AFCS.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> -0.0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/COMM/VOR.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m>-0 </y-m>
+      <z-m> -0.307 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/tacan/tacan.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m>-0 </y-m>
+      <z-m> -0.383 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/comm-vol/comm-vol.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m>-0 </y-m>
+      <z-m> -0.442 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/MPD_large/MPD.xml</path>
+    <offsets>
+      <x-m> -0.050 </x-m>
+      <y-m>-0.38 </y-m>
+      <z-m> -0.400 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/TEWS_large/TEWS.xml</path>
+    <offsets>
+      <x-m> -0.008 </x-m>
+      <y-m>-0.38 </y-m>
+      <z-m> -0.400 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -5 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/radar/radar.xml</path>
+    <offsets>
+      <x-m> 0.047 </x-m>
+      <y-m>-0.40 </y-m>
+      <z-m> -0.655 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -50</pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/EHSI/EHSI.xml</path>
+    <offsets>
+      <x-m> 0.080 </x-m>
+      <y-m>-0.25 </y-m>
+      <z-m> -0.690 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -50</pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

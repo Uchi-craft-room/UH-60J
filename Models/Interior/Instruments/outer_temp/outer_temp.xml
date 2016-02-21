@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>outer_temp.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>PropRPM.face</object-name>
+        <object-name>Prpm.1</object-name>
+        <object-name>Prop.ind</object-name>
+        <object-name>PropRPMneedle</object-name>
+        <texture>rpm.rgb</texture>    
+     <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>PropRPMneedle</object-name>
+        <property>environment/temperature-degc</property>
+        <interpolation>
+            <entry><ind>-50</ind><dep>-135</dep></entry>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind> 50</ind><dep>135</dep></entry>
+        </interpolation>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

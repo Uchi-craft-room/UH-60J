@@ -1,0 +1,61 @@
+<PropertyList>
+
+  <path>trailer.ac</path>
+
+  <animation>
+    <type>spin</type>
+    <object-name>tire-fr</object-name>
+    <property>velocities/uBody-fps</property>
+    <factor>-4.973</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>spin</type>
+    <object-name>tire-rr</object-name>
+    <property>velocities/uBody-fps</property>
+    <factor>-4.973</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>tire-rr</object-name>
+    <object-name>tire-fr</object-name>
+    <object-name>base-plate</object-name>
+    <condition>
+      <property>gear/gear[8]/wow</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+     <object-name>Lock</object-name>
+    <condition>
+     <and>
+      <property>gear/gear[6]/has-brake</property>
+      <property>gear/gear[8]/wow</property>
+    </and>
+    </condition>
+  </animation>
+
+ 
+</PropertyList>

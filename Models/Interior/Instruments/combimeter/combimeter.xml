@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>combimeter.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>NG1</object-name>
+        <object-name>NG2</object-name>
+        <object-name>TGT1</object-name>
+        <object-name>TGT2</object-name>
+        <object-name>PSI1</object-name>
+        <object-name>PSI2</object-name>
+        <object-name>TEMP1</object-name>
+        <object-name>TEMP2</object-name>
+        <object-name>XPSI</object-name>
+        <object-name>XTEMP</object-name>
+        <object-name>FUEL1</object-name>
+        <object-name>FUEL2</object-name>
+     <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>digit-a0</object-name>
+        <object-name>digit-a1</object-name>
+        <object-name>digit-a2</object-name>
+        <object-name>digit-a00</object-name>
+        <object-name>digit-a3</object-name>
+        <object-name>digit-a4</object-name>
+        <object-name>digit-b0</object-name>
+        <object-name>digit-b1</object-name>
+        <object-name>digit-b2</object-name>
+        <object-name>digit-b00</object-name>
+        <object-name>digit-b3</object-name>
+        <object-name>digit-b4</object-name>
+        <object-name>digit-c1</object-name>
+        <object-name>digit-c2</object-name>
+        <object-name>digit-c3</object-name>
+        <object-name>digit-c4</object-name>
+     <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Cube</object-name>
+        <texture>rpm.rgb</texture>    
+     <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.25 </green>
+      <blue>  0.25</blue>
+    </emission>
+  </animation>
+
+
+  <animation>
+    <type>select</type>
+        <object-name>NG1</object-name>
+        <object-name>NG2</object-name>
+        <object-name>TGT1</object-name>
+        <object-name>TGT2</object-name>
+        <object-name>PSI1</object-name>
+        <object-name>PSI2</object-name>
+        <object-name>TEMP1</object-name>
+        <object-name>TEMP2</object-name>
+        <object-name>XPSI</object-name>
+        <object-name>XTEMP</object-name>
+        <object-name>FUEL1</object-name>
+        <object-name>FUEL2</object-name>
+        <object-name>digit-a0</object-name>
+        <object-name>digit-a1</object-name>
+        <object-name>digit-a2</object-name>
+        <object-name>digit-a00</object-name>
+        <object-name>digit-a3</object-name>
+        <object-name>digit-a4</object-name>
+        <object-name>digit-b0</object-name>
+        <object-name>digit-b1</object-name>
+        <object-name>digit-b2</object-name>
+        <object-name>digit-b00</object-name>
+        <object-name>digit-b3</object-name>
+        <object-name>digit-b4</object-name>
+        <object-name>digit-c1</object-name>
+        <object-name>digit-c2</object-name>
+        <object-name>digit-c3</object-name>
+        <object-name>digit-c4</object-name>
+    <condition>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+    </condition>
+  </animation>
+
+
+<!-- NG -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>NG1</object-name>
+    <property>engines/engine[0]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>40</ind><dep>0.1</dep></entry>
+       <entry><ind>70</ind><dep>0.19</dep></entry>
+       <entry><ind>80</ind><dep>0.26</dep></entry>
+       <entry><ind>90</ind><dep>0.335</dep></entry>
+       <entry><ind>100</ind><dep>0.4</dep></entry>
+       <entry><ind>110</ind><dep>0.47</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>NG2</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>40</ind><dep>0.1</dep></entry>
+       <entry><ind>70</ind><dep>0.19</dep></entry>
+       <entry><ind>80</ind><dep>0.26</dep></entry>
+       <entry><ind>90</ind><dep>0.335</dep></entry>
+       <entry><ind>100</ind><dep>0.4</dep></entry>
+       <entry><ind>110</ind><dep>0.47</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+<!-- TGT -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>TGT1</object-name>
+    <property>engines/engine[0]/tot-degc</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>200</ind><dep>0.083</dep></entry>
+       <entry><ind>400</ind><dep>0.166</dep></entry>
+       <entry><ind>500</ind><dep>0.224</dep></entry>
+       <entry><ind>600</ind><dep>0.283</dep></entry>
+       <entry><ind>700</ind><dep>0.340</dep></entry>
+       <entry><ind>800</ind><dep>0.395</dep></entry>
+       <entry><ind>900</ind><dep>0.450</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>TGT2</object-name>
+    <property>engines/engine[1]/tot-degc</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>200</ind><dep>0.083</dep></entry>
+       <entry><ind>400</ind><dep>0.166</dep></entry>
+       <entry><ind>500</ind><dep>0.224</dep></entry>
+       <entry><ind>600</ind><dep>0.283</dep></entry>
+       <entry><ind>700</ind><dep>0.340</dep></entry>
+       <entry><ind>800</ind><dep>0.395</dep></entry>
+       <entry><ind>900</ind><dep>0.450</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+<!-- ENGINE OIL PRESSURE -->
+<!-- PSI -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>PSI1</object-name>
+    <object-name>PSI2</object-name>
+    <property>rotors/main/rpm</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>}
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>250</ind><dep>0.05</dep></entry>
+       <entry><ind>350</ind><dep>0.10</dep></entry>
+       <entry><ind>450</ind><dep>0.15</dep></entry>
+       <entry><ind>475</ind><dep>0.20</dep></entry>
+       <entry><ind>500</ind><dep>0.30</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+<!-- ENGINE OIL TEMP -->
+  <animation>
+    <type>textranslate</type>
+    <object-name>TEMP1</object-name>
+    <property>engines/engine[0]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.13</dep></entry>
+       <entry><ind>20</ind><dep>0.13</dep></entry>
+       <entry><ind>40</ind><dep>0.13</dep></entry>
+       <entry><ind>50</ind><dep>0.170</dep></entry>
+       <entry><ind>60</ind><dep>0.200</dep></entry>
+       <entry><ind>70</ind><dep>0.250</dep></entry>
+       <entry><ind>80</ind><dep>0.290</dep></entry>
+       <entry><ind>90</ind><dep>0.330</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>TEMP2</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.13</dep></entry>
+       <entry><ind>20</ind><dep>0.13</dep></entry>
+       <entry><ind>40</ind><dep>0.13</dep></entry>
+       <entry><ind>50</ind><dep>0.170</dep></entry>
+       <entry><ind>60</ind><dep>0.200</dep></entry>
+       <entry><ind>70</ind><dep>0.250</dep></entry>
+       <entry><ind>80</ind><dep>0.290</dep></entry>
+       <entry><ind>90</ind><dep>0.330</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- XPSI -->
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>XPSI</object-name>
+    <property>rotors/main/rpm</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>}
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>250</ind><dep>0.05</dep></entry>
+       <entry><ind>350</ind><dep>0.10</dep></entry>
+       <entry><ind>450</ind><dep>0.15</dep></entry>
+       <entry><ind>475</ind><dep>0.20</dep></entry>
+       <entry><ind>500</ind><dep>0.30</dep></entry>
+       <entry><ind>525</ind><dep>0.40</dep></entry>
+       <entry><ind>550</ind><dep>0.50</dep></entry>
+       <entry><ind>600</ind><dep>0.60</dep></entry>
+       <entry><ind>650</ind><dep>0.58</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>XTEMP</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.13</dep></entry>
+       <entry><ind>20</ind><dep>0.13</dep></entry>
+       <entry><ind>40</ind><dep>0.13</dep></entry>
+       <entry><ind>50</ind><dep>0.170</dep></entry>
+       <entry><ind>60</ind><dep>0.200</dep></entry>
+       <entry><ind>70</ind><dep>0.245</dep></entry>
+       <entry><ind>80</ind><dep>0.270</dep></entry>
+       <entry><ind>90</ind><dep>0.290</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+
+<!-- FUEL QTY-->
+  <animation>
+    <type>textranslate</type>
+    <object-name>FUEL1</object-name>
+    <property>consumables/fuel/tank/level-lbs</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>300</ind><dep>0.06</dep></entry>
+       <entry><ind>600</ind><dep>0.11</dep></entry>
+       <entry><ind>900</ind><dep>0.17</dep></entry>
+       <entry><ind>1200</ind><dep>0.235</dep></entry>
+       <entry><ind>1500</ind><dep>0.3</dep></entry>
+       <entry><ind>1800</ind><dep>0.37</dep></entry>
+       <entry><ind>2100</ind><dep>0.433</dep></entry>
+       <entry><ind>2300</ind><dep>0.47</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>FUEL2</object-name>
+    <property>consumables/fuel/tank[1]/level-lbs</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>300</ind><dep>0.06</dep></entry>
+       <entry><ind>600</ind><dep>0.11</dep></entry>
+       <entry><ind>900</ind><dep>0.17</dep></entry>
+       <entry><ind>1200</ind><dep>0.235</dep></entry>
+       <entry><ind>1500</ind><dep>0.3</dep></entry>
+       <entry><ind>1800</ind><dep>0.37</dep></entry>
+       <entry><ind>2100</ind><dep>0.433</dep></entry>
+       <entry><ind>2300</ind><dep>0.47</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- DIGIT -->
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-a4</object-name>
+        <property>engines/engine[0]/n2-pct</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <min>0</min>
+        <bias></bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-a3</object-name>
+        <property>engines/engine[0]/n2-pct</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-a00</object-name>
+        <property>engines/engine[0]/n2-pct</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>digit-a2</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-a1</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-a0</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+        <factor>1</factor>
+        <step>0.1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-b4</object-name>
+    <property>engines/engine[0]/tot-degc</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <min>0</min>
+        <bias></bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-b3</object-name>
+    <property>engines/engine[0]/tot-degc</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-b00</object-name>
+    <property>engines/engine[0]/tot-degc</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>digit-b2</object-name>
+    <property>engines/engine[1]/tot-degc</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-b1</object-name>
+    <property>engines/engine[1]/tot-degc</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-b0</object-name>
+    <property>engines/engine[1]/tot-degc</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-c4</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <min>0</min>
+        <bias></bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-c3</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>digit-c2</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit-c1</object-name>
+        <property>consumables/fuel/total-fuel-lbs</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

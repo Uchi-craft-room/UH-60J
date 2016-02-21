@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <model>
+    <name>ROTOR1</name>
+    <path>Aircraft/UH-60J/Models/Rotor/rotor-brade/rotor-brade_1.xml</path>
+    <offsets>
+      <x-m> -0 </x-m>
+      <y-m>  0</y-m>
+      <z-m>  0.00 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>ROTOR2</name>
+    <path>Aircraft/UH-60J/Models/Rotor/rotor-brade/rotor-brade_2.xml</path>
+    <offsets>
+      <x-m> -0 </x-m>
+      <y-m>  0</y-m>
+      <z-m>  0.00 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 90 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>ROTOR3</name>
+    <path>Aircraft/UH-60J/Models/Rotor/rotor-brade/rotor-brade_3.xml</path>
+    <offsets>
+      <x-m> -0 </x-m>
+      <y-m>  0</y-m>
+      <z-m>  0.00 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>ROTOR4</name>
+    <path>Aircraft/UH-60J/Models/Rotor/rotor-brade/rotor-brade_4.xml</path>
+    <offsets>
+      <x-m> -0 </x-m>
+      <y-m>  0</y-m>
+      <z-m>  0.00 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 270 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <animation>
+    <name>ROTOR-BRADES</name>
+        <object-name>ROTOR1</object-name>
+        <object-name>ROTOR2</object-name>
+        <object-name>ROTOR3</object-name>
+        <object-name>ROTOR4</object-name>
+  </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>ROTOR-BRADES</object-name>
+		<property>rotors/main/blade/position-deg</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+
+</PropertyList>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>alt.ac</path>
+
+
+  <animation>
+    <type>material</type>
+    <object-name>ALTface</object-name>
+    <object-name>InhgKnob</object-name>
+    <emission>
+     <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>needle</object-name>
+    <emission>
+     <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   1.00 </red>
+      <green> 0.20 </green>
+      <blue>  0.20 </blue>
+    </emission>
+  </animation>
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>position/gear-agl-ft</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 40 </ind><dep> 80 </dep></entry>
+      <entry><ind> 100 </ind><dep> 140 </dep></entry>
+      <entry><ind> 200 </ind><dep> 180 </dep></entry>
+      <entry><ind> 1000</ind><dep> 340 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>
+
+
+

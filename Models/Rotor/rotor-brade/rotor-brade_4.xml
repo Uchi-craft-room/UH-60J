@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>rotor-brade.ac</path>
+
+  <animation>
+          <object-name>rotor_a</object-name>
+	  <object-name>rotor_0</object-name>
+          <object-name>rotor_1</object-name>
+          <object-name>rotor_2</object-name>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+          <object-name>rotor-a3</object-name>
+          <object-name>rotor-a4</object-name>
+          <object-name>rotor-a5</object-name>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+          <object-name>rotor-b3</object-name>
+          <object-name>rotor-b4</object-name>
+          <object-name>rotor-b5</object-name>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+          <object-name>rotor-c3</object-name>
+          <object-name>rotor-c4</object-name>
+          <object-name>rotor-c5</object-name>
+  </animation>
+
+
+   <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+          <object-name>rotor-a3</object-name>
+          <object-name>rotor-a4</object-name>
+          <object-name>rotor-a5</object-name>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+          <object-name>rotor-b3</object-name>
+          <object-name>rotor-b4</object-name>
+          <object-name>rotor-b5</object-name>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+          <object-name>rotor-c3</object-name>
+          <object-name>rotor-c4</object-name>
+          <object-name>rotor-c5</object-name>
+   </effect>
+
+<!-- FOLDING -->
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor_0</object-name>
+          <object-name>rotor_1</object-name>
+          <object-name>rotor_2</object-name>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <property>/controls/rotor/folding-pos</property>
+	   <interpolation>
+		<entry> <ind> 0 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 1 </ind> <dep> 46 </dep> </entry>
+	   </interpolation>
+	  <center>
+	    <x-m>0.744</x-m>
+	    <y-m>-0.002</y-m>
+	    <z-m>-1.175</z-m>
+	  </center>
+	  <axis>
+	    <x>0</x>
+	    <y>0</y>
+	    <z>1</z>
+	  </axis>
+  </animation>
+
+<!-- BRADE CONE -->
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor_0</object-name>
+          <object-name>rotor_1</object-name>
+          <object-name>rotor_2</object-name>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <property>rotors/main/blade/incidence-deg</property>
+	  <center>
+	    <x-m>-0.828</x-m>
+	    <y-m>-0.002</y-m>
+	    <z-m> 1.136</z-m>
+	  </center>
+	  <axis>
+	    <x>1</x>
+	    <y>0</y>
+	    <z>0</z>
+	  </axis>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor_1</object-name>
+          <object-name>rotor_2</object-name>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 5 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+	  <center>
+	    <x-m>2.259</x-m>
+	    <y-m>0.003</y-m>
+	    <z-m>1.144</z-m>
+	  </center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor_2</object-name>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+	  <center>
+	    <x-m>3.811</x-m>
+	    <y-m>0.003</y-m>
+	    <z-m>1.144</z-m>
+	  </center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor_3</object-name>
+          <object-name>rotor_4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5</ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0</ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5</ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+	  <center>
+	    <x-m>5.620</x-m>
+	    <y-m>0.003</y-m>
+	    <z-m>1.144</z-m>
+	  </center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor_4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 10 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+	  <center>
+	    <x-m>7.244</x-m>
+	    <y-m>0.003</y-m>
+	    <z-m>1.144</z-m>
+	  </center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ </animation>
+
+
+
+  <animation>
+    <type>select</type>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+          <object-name>rotor-a3</object-name>
+          <object-name>rotor-a4</object-name>
+          <object-name>rotor-a5</object-name>
+    <condition>
+   <and>
+     <greater-than>
+       <property>rotors/main/rpm</property>
+       <value>50</value>
+     </greater-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+          <object-name>rotor-b3</object-name>
+          <object-name>rotor-b4</object-name>
+          <object-name>rotor-b5</object-name>
+    <condition>
+   <and>
+     <greater-than>
+       <property>rotors/main/rpm</property>
+       <value>100</value>
+     </greater-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+          <object-name>rotor-c3</object-name>
+          <object-name>rotor-c4</object-name>
+          <object-name>rotor-c5</object-name>
+    <condition>
+   <and>
+     <greater-than>
+       <property>rotors/main/rpm</property>
+       <value>200</value>
+     </greater-than>
+    </and>
+    </condition>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+          <object-name>rotor-a3</object-name>
+          <object-name>rotor-a4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 5 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 2.259 </x1-m>
+      <y1-m> 0.008 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 2.171 </x2-m>
+      <y2-m> -0.791 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+          <object-name>rotor-a3</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 3.811 </x1-m>
+      <y1-m> 0.008 </y1-m>
+      <z1-m> 1.123 </z1-m>
+      <x2-m> 3.630 </x2-m>
+      <y2-m> -1.322 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+ </animation>
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor-a1</object-name>
+          <object-name>rotor-a2</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5</ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0</ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5</ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 5.620 </x1-m>
+      <y1-m> 0.008 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 5.329 </x2-m>
+      <y2-m> -1.940 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>rotor-a1</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 10 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 7.244 </x1-m>
+      <y1-m> 0.008 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 6.855 </x2-m>
+      <y2-m> -2.497 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+          <object-name>rotor-b3</object-name>
+          <object-name>rotor-b4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 5 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 2.171 </x1-m>
+      <y1-m> -0.791 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 1.775 </x2-m>
+      <y2-m> -1.488 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+          <object-name>rotor-b3</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 3.630 </x1-m>
+      <y1-m> -1.322 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 2.964 </x2-m>
+      <y2-m> -2.486 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+ </animation>
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-b1</object-name>
+          <object-name>rotor-b2</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5</ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0</ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5</ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 5.329 </x1-m>
+      <y1-m> -1.940 </y1-m>
+      <z1-m> 1.123 </z1-m>
+      <x2-m> 4.350 </x2-m>
+      <y2-m> -3.648 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-b1</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 10 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 6.856 </x1-m>
+      <y1-m> -2.496 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 5.594 </x2-m>
+      <y2-m> -4.692 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+          <object-name>rotor-c3</object-name>
+          <object-name>rotor-c4</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 5 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 1.775 </x1-m>
+      <y1-m> -1.488 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 1.166 </x2-m>
+      <y2-m> -2.020 </y2-m>
+      <z2-m>  1.123 </z2-m>
+    </axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+          <object-name>rotor-c3</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind>  <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind>  <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 2.964 </x1-m>
+      <y1-m> -2.486 </y1-m>
+      <z1-m> 1.123 </z1-m>
+      <x2-m> 1.942 </x2-m>
+      <y2-m> -3.364 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+ </animation>
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-c1</object-name>
+          <object-name>rotor-c2</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 5</ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0</ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5</ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 4.350 </x1-m>
+      <y1-m> -3.648 </y1-m>
+      <z1-m> 1.123 </z1-m>
+      <x2-m> 2.847 </x2-m>
+      <y2-m> -4.930 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+ </animation>
+
+
+   <animation>
+    <type>rotate</type>
+          <object-name>rotor-c1</object-name>
+	  <property>rotors/main/cone-deg</property>
+	   <interpolation>
+		<entry> <ind> 10 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind> 0 </ind> <dep> 0 </dep> </entry>
+		<entry> <ind>-5 </ind> <dep>-2 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m> 5.594 </x1-m>
+      <y1-m> -4.692 </y1-m>
+      <z1-m> 1.142 </z1-m>
+      <x2-m> 3.659 </x2-m>
+      <y2-m> -6.337 </y2-m>
+      <z2-m>  1.142 </z2-m>
+    </axis>
+ </animation>
+
+
+
+
+
+</PropertyList>
+

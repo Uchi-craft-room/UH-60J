@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>EHSI.ac</path>
+    
+    <animation>
+       <type>range</type>
+       <min-m>0</min-m>
+       <max-m>5</max-m>
+    </animation>
+ 
+  <animation>
+ <object-name>a1</object-name>
+  <object-name>b1</object-name>
+  <object-name>b2</object-name>
+  <object-name>b3</object-name>
+  <object-name>b4</object-name>
+  <object-name>c1</object-name>
+  <object-name>c2</object-name>
+  <object-name>c3</object-name>
+  <object-name>c4</object-name>
+  <object-name>base</object-name>
+  <object-name>knob1</object-name>
+  <object-name>knob2</object-name>
+  <object-name>knob3</object-name>
+   <type>material</type>
+     <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>0.50</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+
+ <animation>
+ <object-name>a1-on</object-name>
+  <object-name>b1-on</object-name>
+  <object-name>b2-on</object-name>
+   <type>material</type>
+     <emission>
+        <red> 1 </red>
+        <green> 1 </green>
+        <blue> 1 </blue>
+      </emission>
+  </animation>
+
+
+  <animation>
+    <type>select</type>
+    <object-name>a1-on</object-name>
+    <condition>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>b1-on</object-name>
+    <condition>
+     <and>
+        <equals>
+            <property>instrumentation/dme/switch-position</property>
+            <value>0</value>
+        </equals>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+       </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>b2-on</object-name>
+    <condition>
+     <and>
+        <equals>
+            <property>instrumentation/dme/switch-position</property>
+            <value>1</value>
+        </equals>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+       </and>
+    </condition>
+  </animation>
+
+
+<!-- -hotspots -->
+
+<animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>b2</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+                <command>nasal</command>
+                <script>dmesw.dme_step(1)</script>
+       </binding>
+    </action>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>b1</object-name>
+    <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+        <binding>
+                <command>nasal</command>
+                <script>dmesw.dme_step(-1)</script>
+       </binding>
+    </action>
+</animation>
+
+!--		COURSE KNOB          -->
+
+<!--	CW	-->
+<animation>
+<type>pick</type>
+<object-name>course.cw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+		<command>property-adjust</command>
+		<property>instrumentation/nav/radials/selected-deg</property>
+		<step>1</step>
+		<min>0</min>
+		<max>360</max>
+		<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>course.cw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+			<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>10</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CCW	-->
+
+<animation>
+
+	<type>pick</type>
+	<object-name>course.ccw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>-1</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>course.ccw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+			<binding>
+			<command>property-adjust</command>
+			<property>instrumentation/nav/radials/selected-deg</property>
+			<step>-10</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>knob3</object-name>
+  <property>instrumentation/nav/radials/selected-deg</property>
+  <center>
+    <x-m>0.006</x-m>
+    <y-m>0.041</y-m>
+    <z-m>0.020</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+<!-- HEADING SET KNOB -->
+
+<!--	CW	-->
+<animation>
+	<type>pick</type>
+		<object-name>hdg.cw</object-name>
+			<action>
+				<button>0</button>
+		
+				<repeatable>true</repeatable>
+				<interval-sec>0.2</interval-sec>
+				<binding>
+					<command>property-adjust</command>					
+					<property>autopilot/settings/true-heading-deg</property >
+					<step>1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+				<binding>
+					<command>property-adjust</command>					
+					<property>autopilot/settings/heading-bug-deg</property >
+					<step>1</step>
+					<min>0</min>
+					<max>360</max>
+					<wrap>true</wrap>
+				</binding>
+			</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hdg.cw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/true-heading-deg</property >
+			<step>10</step>
+			<min>0</min>
+
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property >
+			<step>10</step>
+			<min>0</min>
+
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<!--	CCW	-->
+
+<animation>
+
+	<type>pick</type>
+	<object-name>hdg.ccw</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/true-heading-deg</property >
+
+			<step>-1</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property >
+
+			<step>-1</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>hdg.ccw</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>true</repeatable>
+		<interval-sec>0.2</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/true-heading-deg</property >
+
+			<step>-10</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+		<binding>
+			<command>property-adjust</command>
+			
+			<property>autopilot/settings/heading-bug-deg</property >
+
+			<step>-10</step>
+			<min>0</min>
+			<max>360</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</animation>
+
+
+<animation>
+  <type>rotate</type>
+  <object-name>knob1</object-name>
+  <property>autopilot/settings/true-heading-deg</property >
+  <center>
+    <x-m>0.006</x-m>
+    <y-m>-0.033</y-m>
+    <z-m>0.021</z-m>
+  </center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+</PropertyList>
+

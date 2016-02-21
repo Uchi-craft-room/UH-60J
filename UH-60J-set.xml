@@ -1,0 +1,468 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim >
+
+		<description>Mitsubishi UH-60J (YASim)</description>
+		<author>Hitoshi Uchida(3D/FDM)</author>
+		<status>1.1</status>
+		<license>GPL v2</license>
+
+		<flight-model>yasim</flight-model>
+		<aero>UH-60J</aero>
+
+		<fuel-fraction>0.5</fuel-fraction>
+
+
+		<startup>
+			<splash-texture>Aircraft/UH-60J/splash.png</splash-texture>
+		</startup>
+
+   <airport>
+        <runways>
+            <start-offset-m>20</start-offset-m>
+        </runways>
+    </airport>
+
+		<sound>
+			<path>Aircraft/UH-60J/Sounds/sound.xml</path>
+		</sound>
+
+		<submodels>
+			<serviceable type="bool">true</serviceable>
+			<path>Aircraft/UH-60J/Models/submodels.xml</path>
+		</submodels>
+
+		<panel>
+			<visibility archive="n">false</visibility>
+		</panel>
+		
+    <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+
+    </systems> 
+		
+
+<model>
+	<path archive="y">Aircraft/UH-60J/Models/UH-60J.xml</path>
+	   <bo105>
+	      <tail-angle-deg type="int" archive="y">0</tail-angle-deg>
+	      <state type="int">0</state>
+	      <rotor-step-deg type="float">-1.0</rotor-step-deg>
+
+		<particles>
+			<enabled type="bool">true</enabled>
+		</particles>
+
+				
+		<doors>
+			<door>
+				<position-norm type="double">0.0</position-norm>
+				<name type="string">pilot's door</name>
+			</door>
+
+			<door>
+				<position-norm type="double">0.0</position-norm>
+				<name type="string">copilot's door</name>
+			</door>
+		</doors>
+	</bo105>
+
+	<livery>
+		<file type="string"/>
+	</livery>
+  </model>
+
+	
+  <multiplay>
+   <generic>
+      		<int n="0" alias="controls/lighting/nav-lights" />
+     		<int n="1" alias="/controls/switches/beacon-switch" />
+    		<int n="2" alias="controls/switches/landing-light" />
+    		<int n="3" alias="controls/switches/AIR_HD-light" />
+		<int n="4" alias="controls/switches/GND-light" />
+		<int n="5" alias="controls/switches/RAST-light" />
+		<int n="6" alias="controls/switches/cabdome-light" />
+    </generic>
+  </multiplay>
+
+ <rendering>
+	<camera-group>
+		<znear type="double">0.1</znear>
+	</camera-group>
+ </rendering>
+
+ <chase-distance-m type="double" archive="y"> -20 </chase-distance-m>
+
+ <view n="0">
+	<internal archive="y">true</internal>
+	<config>
+			<x-offset-m archive="y">0.62</x-offset-m><!--right-->
+			<y-offset-m archive="y">-0.60</y-offset-m><!--up-->
+			<z-offset-m archive="y">-2.90</z-offset-m><!--back-->
+			<pitch-offset-deg archive="y">-10</pitch-offset-deg>
+                        <default-field-of-view-deg>70</default-field-of-view-deg>
+			<limits>
+			<enabled type="bool">true</enabled>
+			<right>
+				<heading-max-deg type="double">160</heading-max-deg>
+				<x-offset-max-m type="double">0.30</x-offset-max-m>
+			</right>
+			<left>
+				<heading-max-deg type="double">140</heading-max-deg>
+				<x-offset-max-m type="double">0.15</x-offset-max-m>
+			</left>
+		</limits>
+	</config>
+  </view>
+
+
+  <view n="100">
+    <name>back Seat View</name>
+        <internal archive="y">true</internal>
+	<config>
+           <from-model type="bool">true</from-model>
+	   <from-model-idx type="int">0</from-model-idx>
+	   <x-offset-m archive="y"> -0.76</x-offset-m><!--right-->
+	   <y-offset-m archive="y">-0.80</y-offset-m><!--up-->
+	   <z-offset-m archive="y">-0.30</z-offset-m><!--back-->
+	   <pitch-offset-deg archive="y">0</pitch-offset-deg>
+	   <heading-offset-deg archive="y">0</heading-offset-deg>
+           <default-field-of-view-deg>60</default-field-of-view-deg>
+	</config>
+   </view>
+
+  <view n="101">
+    <name>co-pilot Seat View</name>
+        <internal archive="y">true</internal>
+	<config>
+           <from-model type="bool">true</from-model>
+	   <from-model-idx type="int">0</from-model-idx>
+	   <x-offset-m archive="y">-0.62</x-offset-m><!--right-->
+	   <y-offset-m archive="y">-0.60</y-offset-m><!--up-->
+	   <z-offset-m archive="y">-2.90</z-offset-m><!--back-->
+	   <pitch-offset-deg archive="y">-10</pitch-offset-deg>
+           <default-field-of-view-deg>70</default-field-of-view-deg>
+	   <limits>
+		<enabled type="bool">true</enabled>
+		<left>
+			<heading-max-deg type="double">160</heading-max-deg>
+			<x-offset-max-m type="double">0.30</x-offset-max-m>
+			<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+		</left>
+		<right>
+			<heading-max-deg type="double">140</heading-max-deg>
+			<x-offset-max-m type="double">0.15</x-offset-max-m>
+			<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+		</right>
+	   </limits>
+	</config>
+   </view>
+
+
+		
+
+
+  	<hud>
+		<enable3d>false</enable3d>
+  	</hud>
+
+		<weight n="0">
+			<name>Pilot</name>
+			<weight-lb>180</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="1">
+			<name>Co-Pilot</name>
+			<weight-lb>180</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="2">
+			<name>Right Passenger</name>
+			<weight-lb>0</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="3">
+			<name>Middle Passenger</name>
+			<weight-lb>0</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="4">
+			<name>Left Passenger</name>
+			<weight-lb>0</weight-lb>
+			<max-lb>300</max-lb>
+		</weight>
+
+		<weight n="5">
+			<name>Load</name>
+			<weight-lb>0</weight-lb>
+			<max-lb>800</max-lb>
+		</weight>
+
+    <menubar>
+	<default>
+		<menu n="100">
+		<label>UH-60J</label>
+		<item>
+		<label>Autostart</label>
+			<binding>
+				<command>nasal</command>
+				<script>bo105.startup()</script>
+			</binding>
+		</item>
+
+		<item>
+		<label>Autoshutdown</label>
+			<binding>
+			        <command>nasal</command>
+				<script>bo105.shutdown()</script>
+			</binding>
+		</item>
+
+                <item n="10">
+                    <label>Pushback</label>
+                    <name>pushback</name>
+                        <binding>
+                             <command>dialog-show</command>
+                             <dialog-name>pushback</dialog-name>
+                        </binding>
+                 </item>
+	        </menu>
+          </default>
+       </menubar>
+
+
+		<help>
+			<title>UH-60J</title>
+			<key>
+				<name>{ }</name>
+				<desc>shutdown/start turbines</desc>
+			</key>
+			
+			<key>
+				<name>e</name>
+				<desc>toggle REFUEL switch</desc>
+			</key>
+			
+			<key>
+				<name>n/N</name>
+				<desc>engine power adjustment up/down</desc>
+			</key>
+			<key>
+				<name>r</name>
+				<desc>apply rotor brake</desc>
+			</key>
+			<key>
+				<name>R</name>
+				<desc>toggle rotor brake</desc>
+			</key>
+			
+			
+			<key>
+				<name>MMB</name>
+				<desc>adjust power lever (middle mouse button)</desc>
+			</key>
+		</help>
+	</sim>
+
+
+	<consumables>
+		<fuel>
+			<tank>
+				<name>main1</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+
+			<tank>
+				<name>main2</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+
+			<tank>
+				<name>supply</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+			<tank>
+				<name>ext1</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+
+			<tank>
+				<name>ext2</name>
+				<selected type="bool" write="n">1</selected>
+				<density-ppg type="double" write="n">6.682</density-ppg>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<controls>
+		<rotor>
+			<reltarget type="double">0</reltarget>
+			<maxreltorque type="double">0</maxreltorque>
+		</rotor>
+
+		<armament>
+			<trigger type="bool">false</trigger>
+		</armament>
+
+		<engines>
+			<engine n="0">
+				<magnetos>1</magnetos>
+				<propeller-pitch alias="/controls/engines/power-trim"/>
+				<mixture alias="/controls/engines/power-balance"/>
+			</engine>
+
+			<engine n="1">
+				<magnetos>1</magnetos>
+				<propeller-pitch alias="/controls/engines/power-trim"/>
+				<mixture alias="/controls/engines/power-balance"/>
+				<throttle alias="/controls/engines/engine[0]/throttle"/>
+			</engine>
+
+			<power-trim type="double">0</power-trim>
+			<power-balance type="double">0</power-balance>
+		</engines>
+
+	</controls>
+
+	<input>
+		<keyboard>
+
+			<key n="82">
+				<name>R</name>
+				<desc>Toggle rotor brake</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var p = "/controls/rotor/brake";
+						setprop(p, !getprop(p));
+					</script>
+				</binding>
+			</key>
+
+                        <key n="100">
+                              <name>d</name>
+                              <desc>deck door</desc>
+                               <binding>
+                                  <command>nasal</command>
+                                  <script>doors.doorsystem.crewexport();</script>
+                               </binding>
+                        </key>
+
+ <key n="101">
+  <name>e</name>
+  <desc>Up/Down arresting hook</desc>
+  <binding>
+   <command>property-toggle</command>
+   <property>/controls/gear/tailhook</property>
+  </binding>
+ </key>
+
+
+			<key n="114">
+				<name>r</name>
+				<desc>Apply rotor brake</desc>
+				<binding>
+					<command>nasal</command>
+					<script>interpolate("/controls/rotor/brake", 1.0, 2)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>interpolate("/controls/rotor/brake", 0.0, 2)</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			
+
+			<key n="123">
+				<name>{</name>
+				<desc>Shutdown Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>bo105.shutdown()</script>
+					<condition>
+						<property>/sim/signals/fdm-initialized</property>
+					</condition>
+				</binding>
+			</key>
+
+			<key n="125">
+				<name>}</name>
+				<desc>Start Engines</desc>
+				<binding>
+					<command>nasal</command>
+					<script>bo105.startup()</script>
+					<condition>
+						<property>/sim/signals/fdm-initialized</property>
+					</condition>
+				</binding>
+			</key>
+
+
+		</keyboard>
+	</input>
+
+	<nasal>
+		<bo105>
+			<file>Aircraft/UH-60J/Nasal/bo105.nas</file>
+		</bo105>
+
+		<lights>
+                       <file>Aircraft/UH-60J/Nasal/Lights.nas</file>
+                </lights>
+		<UH-60J>
+                       <file>Aircraft/UH-60J/Nasal/vhf22.nas</file>
+                       <file>Aircraft/UH-60J/Nasal/vir32.nas</file>
+                       <file>Aircraft/UH-60J/Nasal/instruments.nas</file>
+                       <file>Aircraft/UH-60J/Nasal/electrical.nas</file>
+                </UH-60J>
+		<doors>
+                       <file>Aircraft/UH-60J/Nasal/doors.nas</file>
+                </doors>
+                <m877>
+                       <file>Aircraft/UH-60J/Models/Interior/Instruments/chronograph/M877.nas</file>
+                </m877>
+                <dmesw>
+                       <file>Aircraft/UH-60J/Nasal/dmesw.nas</file>
+                </dmesw>
+                <nav_scripts>
+                        <file>Aircraft/UH-60J/Nasal/nav_scripts.nas</file>
+                </nav_scripts>
+                <tews>
+                        <file>Aircraft/UH-60J/Models/Interior/Instruments/TEWS/radar.nas</file>
+                </tews>
+  		<aar>
+  		    <file>Aircraft/Generic/aar.nas</file>
+  		</aar>
+	</nasal>
+
+	<rotors>
+		<main>
+			<rpm type="double">0</rpm>
+		</main>
+	</rotors>
+
+ <systems>
+  <refuel>
+   <type>probe</type>
+   <serviceable type="bool">true</serviceable>
+   <max-fuel-transfer-lbs-min>2000</max-fuel-transfer-lbs-min>
+   <offset-x-m>0</offset-x-m>
+   <offset-y-m>0</offset-y-m>
+   <offset-z-m>0</offset-z-m>
+  </refuel>
+ </systems>
+
+</PropertyList>

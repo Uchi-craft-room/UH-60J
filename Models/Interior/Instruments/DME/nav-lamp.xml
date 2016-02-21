@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+ <path>greenlight.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>light</object-name>
+    <condition>
+     <and>
+        <equals>
+            <property>instrumentation/dme/switch-position</property>
+            <value>1</value>
+        </equals>
+        <equals>
+            <property>controls/electric/battery-switch</property>
+            <value>1</value>
+        </equals>
+       </and>
+    </condition>
+  </animation>
+
+</PropertyList>
+
+
+
+

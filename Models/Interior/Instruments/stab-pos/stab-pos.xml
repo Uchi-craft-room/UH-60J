@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PropertyList> 
+	<path>stab-pos.ac</path>
+
+	<animation> 
+		<type>rotate</type>
+		<object-name>needle</object-name>
+                <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  40</dep></entry>
+			<entry><ind>   0</ind><dep>  40</dep></entry>
+			<entry><ind>  30</ind><dep>  10</dep></entry>
+			<entry><ind>  90</ind><dep>   0</dep></entry>
+			<entry><ind> 150</ind><dep> -10</dep></entry>
+		</interpolation>
+		<axis> 
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- lighting -->
+	<animation> 
+		<object-name>mount_0</object-name>
+		<object-name>mount_0.001</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+			<red>0.5</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+
+	<animation>
+                <object-name>needle</object-name> 
+		<type>material</type>
+		<emission> 
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+			<red>0.8</red>
+			<green>0.3</green>
+			<blue>0.3</blue>
+		</emission>
+	</animation>
+
+
+</PropertyList>

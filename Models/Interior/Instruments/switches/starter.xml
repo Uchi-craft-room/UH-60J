@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>starter.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>SwitchNut</object-name>
+    <object-name>Switch-Starter</object-name>
+    <object-name>Circle</object-name>
+    <emission>
+      <red>   0.5 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>Switch-Starter</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+	<binding>
+		<command>nasal</command>
+		<script>bo105.startup()</script>
+		<condition>
+			<property>/sim/signals/fdm-initialized</property>
+		</condition>
+	</binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Switch-Starter</object-name>
+    <property>controls/engines/engine/starter</property>
+    <factor>0.005</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

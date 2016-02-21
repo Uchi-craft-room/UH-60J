@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>header.ac</path>
+
+<!-- **************** DC BUS ********************-->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/DC_bus/DC_bus.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0.2</y-m>
+      <z-m> 0.51 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/DC_bus/DC_bus.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> -0.2</y-m>
+      <z-m> 0.51 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- ******************* ENG CONTROL *************************** -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/eng_control/eng_control.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0.16 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- ******************* POWER CONSOLE *************************** -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/power_console/power_console.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0.46 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- BATT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/master.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.02 </y-m>
+      <z-m> 0.40 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- GEN -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/gen_APU.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.021 </y-m>
+      <z-m> 0.40 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/gen_1.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.047 </y-m>
+      <z-m> 0.40 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/gen_2.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.074 </y-m>
+      <z-m> 0.40 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- EXT POWER -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/ext_pwr.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.063 </y-m>
+      <z-m> 0.40 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- CARG0 HOOK -->
+<!-- CONTROL -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.017 </y-m>
+      <z-m> 0.513 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- EMER RLSE -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_btn.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.068 </y-m>
+      <z-m> 0.513 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_4.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.067 </y-m>
+      <z-m> 0.513 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_4.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.025 </y-m>
+      <z-m> 0.513 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- RESCUE HOIST -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_4.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.063 </y-m>
+      <z-m> 0.455 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- APU CONTROL -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/APU.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.069 </y-m>
+      <z-m> 0.290 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- APU AIR SOURCE -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/APU_air.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.030 </y-m>
+      <z-m> 0.290 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- APU boost -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.013 </y-m>
+      <z-m> 0.290 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- FIRE EXT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/fire_ext.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.069 </y-m>
+      <z-m> 0.290 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- TEST BUTTON -->
+
+<!-- No.1 TEST_A -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_btn.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.080 </y-m>
+      <z-m> 0.344 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- No.1 TEST_B -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_btn.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.045 </y-m>
+      <z-m> 0.344 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- No.2 TEST_A -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_btn.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.042 </y-m>
+      <z-m> 0.344 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- No.2 TEST_B -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_btn.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.075 </y-m>
+      <z-m> 0.344 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- FIRE DEF TEST -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/test_knob.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.001 </y-m>
+      <z-m> 0.344 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- FIRE EXT LEVER -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/fire_ext_lever.xml</path>
+    <offsets>
+      <x-m> 0.035 </x-m>
+      <y-m> 0.025 </y-m>
+      <z-m> 0.463 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+
+<!-- **************** inst_LT_console ********************-->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/inst_LT_console/inst_LT_console.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0.2</y-m>
+      <z-m> 0.2 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/ignition.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.265 </y-m>
+      <z-m> 0.403 </z-m>
+      <roll-deg>   90 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/knob/knob.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.160 </y-m>
+      <z-m> 0.398 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.16 </y-m>
+      <z-m> 0.335 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.16 </y-m>
+      <z-m> 0.272 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.242 </y-m>
+      <z-m> 0.270 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.242 </y-m>
+      <z-m> 0.335 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.22 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.260 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.175 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.135 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.140 </y-m>
+      <z-m> 0.125 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.197 </y-m>
+      <z-m> 0.125 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.250 </y-m>
+      <z-m> 0.125 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> 0.215 </y-m>
+      <z-m> 0.405 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/clutch_lever/clutch_lever.xml</path>
+    <offsets>
+      <x-m> -0.030 </x-m>
+      <y-m> 0.330 </y-m>
+      <z-m> 0.120 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> -2 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+
+
+
+
+
+
+<!-- ********************* FLIGHT_LT_console ******************** -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/flight_LT_console/flight_LT_console.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m>-0.2</y-m>
+      <z-m> 0.2 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg> 0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- AIR HD LIGHT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/landing-lights.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.224 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- RAST LIGHT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/RAST-light.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.180 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- HOVER LIGHT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/hover-light.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.135 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- CAB DOME LIGHT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/cab_dome-light.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.265 </y-m>
+      <z-m> 0.195 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- NAV-lights -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/nav-lights.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.265 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.225 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg> 180 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- ANTI-COLLISION -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/beacon-lights.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.135 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg>  180 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_5.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.180 </y-m>
+      <z-m>  0.270 </z-m>
+      <roll-deg> 180 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+<!-- LT -->
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.242 </y-m>
+      <z-m> 0.335 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.160 </y-m>
+      <z-m> 0.335 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/LT/LT.xml</path>
+    <offsets>
+      <x-m> 0.003 </x-m>
+      <y-m> -0.242 </y-m>
+      <z-m> 0.410 </z-m>
+      <roll-deg>  0 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- LOWER console Seco -->
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_5.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.155 </y-m>
+      <z-m>  0.405 </z-m>
+      <roll-deg> 180 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!-- THUNDERSTOMMY -->
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_5.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.165 </y-m>
+      <z-m>  0.125 </z-m>
+      <roll-deg> 180 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+<!--HYD-->
+<model>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch_4.xml</path>
+    <offsets>
+      <x-m>  0.003 </x-m>
+      <y-m> -0.230 </y-m>
+      <z-m>  0.125 </z-m>
+      <roll-deg> 180 </roll-deg>
+      <pitch-deg>  0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

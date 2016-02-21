@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+<path>symbol.ac</path>
+
+
+<!-- TACAN -->
+   <animation>
+     <type>select</type>
+	<object-name>tacan</object-name>
+        <condition>
+         <and>
+         <or>
+            <property>controls/electric/engine/generator</property>
+            <property>controls/electric/engine[1]/generator</property>
+         </or>
+         <greater-than>
+            <property>systems/electrical/volts</property>
+            <value>24</value>
+         </greater-than>
+            <property>instrumentation/tacan/in-range</property>
+          <less-than-equals>
+            <property>instrumentation/tacan/indicated-distance-nm</property>
+            <property>/instrumentation/radar/range</property>
+          </less-than-equals>
+         <greater-than>
+            <property>instrumentation/tacan/indicated-time-min</property>
+            <value>0.001</value>
+         </greater-than>         
+         </and>
+        </condition>
+  </animation>
+
+  <animation> 
+   <object-name>tacan</object-name>
+   <type>material</type>
+    <emission> 
+        <red>  0.7 </red>
+        <green>0.7 </green>
+        <blue> 0.7 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+     <object-name>tacan</object-name>
+     <property>instrumentation/tacan/display/y-shift-scaled</property>
+      <factor> 0.0005 </factor>
+        <axis>
+            <x> 0.0 </x>
+            <y> 0.0 </y>
+            <z> 1.0 </z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+     <object-name>tacan</object-name>
+     <property>instrumentation/tacan/display/x-shift-scaled</property>
+      <factor> 0.0005 </factor>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+     <object-name>tacan</object-name>
+     <property>orientation/heading-deg</property>
+      <factor> -1 </factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+  </animation>
+
+
+</PropertyList>

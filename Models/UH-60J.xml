@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>UH-60J.ac</path>
+
+<!--  Specularity fix
+  <animation>
+    <type>material</type>
+    <object-name>fuselage-RH</object-name>
+    <object-name>fuselage-LH</object-name>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <shininess>0</shininess>
+  </animation>
+ -->
+
+<!--== particles on solid==-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>dirt</object-name>
+		<property>orientation/pitch-deg</property>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>dirt</object-name>
+		<property>orientation/roll-deg</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>dirt</object-name>
+		<property>position/gear-agl-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	<particlesystem>
+		<name>dirt</name>
+		<texture>dirt.rgb</texture>
+		<emissive>false</emissive>
+		<lighting>false</lighting>
+
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.5</z-m>
+			<roll-deg>90</roll-deg>
+		</offsets>
+
+		<attach>world</attach>
+
+		<placer>
+			<type>point</type>
+		</placer>
+
+		<condition>
+			<property>sim/model/bo105/particles/enabled</property>
+			<not>
+				<property>sim/paused</property>
+			</not>
+			<not>
+				<property>sim/crashed</property>
+			</not>
+			<less-than>
+				<property>position/altitude-agl-ft</property>
+				<value>100</value>
+			</less-than>
+			<greater-than>
+				<property>rotors/main/rpm</property>
+				<value>200</value>
+			</greater-than>
+		</condition>
+
+		<shooter>
+			<theta-min-deg>0</theta-min-deg>
+			<theta-max-deg>360</theta-max-deg>
+			<phi-min-deg>-0.1</phi-min-deg>
+			<phi-max-deg>0.1</phi-max-deg>
+			<speed-mps>
+				<property>rotors/main/rpm</property>
+				<factor>0.1</factor>
+				<spread>2</spread>
+			</speed-mps>
+			<rotation-speed>
+				<x-min-deg-sec>0</x-min-deg-sec>
+				<y-min-deg-sec>0</y-min-deg-sec>
+				<z-min-deg-sec>0</z-min-deg-sec>
+				<x-max-deg-sec>0</x-max-deg-sec>
+				<y-max-deg-sec>0</y-max-deg-sec>
+				<z-max-deg-sec>0</z-max-deg-sec>
+			</rotation-speed>
+		</shooter>
+
+		<counter>
+			<particles-per-sec>
+				<property>position/altitude-agl-ft</property>
+				<factor>-40</factor>
+				<offset-m>2000</offset-m>
+			</particles-per-sec>
+		</counter>
+
+		<align>billboard</align>
+
+		<particle>
+			<start>
+				<color>
+					<red>
+						<value>0.6</value>
+					</red>
+					<green>
+						<value>0.6</value>
+					</green>
+					<blue>
+						<value>0.6</value>
+					</blue>
+					<alpha>
+						<property>rotors/main/rpm</property>
+						<factor>0.00004</factor>
+						<max>0.001</max>
+					</alpha>
+				</color>
+				<size>
+					<value>0.1</value>
+				</size>
+			</start>
+
+			<end>
+				<color>
+					<red>
+						<value>0.8</value>
+					</red>
+					<green>
+						<value>0.8</value>
+					</green>
+					<blue>
+						<value>0.8</value>
+					</blue>
+					<alpha>
+						<property>rotors/main/rpm</property>
+						<factor>0.0002</factor>
+						<max>0.004</max>
+					</alpha>
+				</color>
+				<size>
+					<value>0.4</value>
+				</size>
+			</end>
+
+			<life-sec>
+				<value>0.3</value>
+			</life-sec>
+			<mass-kg>0.01</mass-kg>
+			<radius-m>0.01</radius-m>
+		</particle>
+
+		<program>
+			<fluid>water</fluid>
+			<gravity>true</gravity>
+			<wind>false</wind>
+		</program>
+	</particlesystem>
+
+
+<!--== particles on water==-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>mist</object-name>
+		<property>orientation/pitch-deg</property>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>mist</object-name>
+		<property>orientation/roll-deg</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>mist</object-name>
+		<property>position/gear-agl-m</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+	<particlesystem>
+		<name>mist</name>
+		<texture>dirt.rgb</texture>
+		<emissive>false</emissive>
+		<lighting>false</lighting>
+
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.5</z-m>
+			<roll-deg>90</roll-deg>
+		</offsets>
+
+		<attach>world</attach>
+
+		<placer>
+			<type>point</type>
+		</placer>
+
+		<condition>
+			<property>sim/model/bo105/particles/enabled</property>
+			<not>
+				<property>sim/paused</property>
+			</not>
+			<not>
+				<property>sim/crashed</property>
+			</not>
+			<less-than>
+				<property>position/altitude-agl-ft</property>
+				<value>200</value>
+			</less-than>
+			<greater-than>
+				<property>rotors/main/rpm</property>
+				<value>200</value>
+			</greater-than>
+                        <not>
+                                <property>gear/gear/ground-is-solid</property>
+                        </not>
+		</condition>
+
+		<shooter>
+			<theta-min-deg>0</theta-min-deg>
+			<theta-max-deg>360</theta-max-deg>
+			<phi-min-deg>-0.1</phi-min-deg>
+			<phi-max-deg>0.1</phi-max-deg>
+			<speed-mps>
+				<property>rotors/main/rpm</property>
+				<factor>0.1</factor>
+				<spread>2</spread>
+			</speed-mps>
+			<rotation-speed>
+				<x-min-deg-sec>0</x-min-deg-sec>
+				<y-min-deg-sec>0</y-min-deg-sec>
+				<z-min-deg-sec>0</z-min-deg-sec>
+				<x-max-deg-sec>0</x-max-deg-sec>
+				<y-max-deg-sec>0</y-max-deg-sec>
+				<z-max-deg-sec>0</z-max-deg-sec>
+			</rotation-speed>
+		</shooter>
+
+		<counter>
+			<particles-per-sec>
+				<property>position/altitude-agl-ft</property>
+				<factor>-40</factor>
+				<offset-m>2000</offset-m>
+			</particles-per-sec>
+		</counter>
+
+		<align>billboard</align>
+
+		<particle>
+			<start>
+				<color>
+					<red>
+						<value>0.8</value>
+					</red>
+					<green>
+						<value>0.8</value>
+					</green>
+					<blue>
+						<value>1.0</value>
+					</blue>
+					<alpha>
+						<property>rotors/main/rpm</property>
+						<factor>0.00004</factor>
+						<max>0.001</max>
+					</alpha>
+				</color>
+				<size>
+					<value>0.05</value>
+				</size>
+			</start>
+
+			<end>
+				<color>
+					<red>
+						<value>0.8</value>
+					</red>
+					<green>
+						<value>0.8</value>
+					</green>
+					<blue>
+						<value>1.0</value>
+					</blue>
+					<alpha>
+						<property>rotors/main/rpm</property>
+						<factor>0.0002</factor>
+						<max>0.004</max>
+					</alpha>
+				</color>
+				<size>
+					<value>3.0</value>
+				</size>
+			</end>
+
+			<life-sec>
+				<value>1.5</value>
+			</life-sec>
+			<mass-kg>0.001</mass-kg>
+			<radius-m>0.01</radius-m>
+		</particle>
+
+		<program>
+			<fluid>water</fluid>
+			<gravity>false</gravity>
+			<wind>false</wind>
+		</program>
+	</particlesystem>
+
+   <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+     <object-name>tailrotor-prop</object-name>
+     <object-name>lenz</object-name>
+   </effect>
+
+
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>glass_shader.png</texture>
+    <object-name>glass</object-name>
+    <object-name>glass_SDR</object-name>
+    <object-name>lenz</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>glass</object-name>
+    <object-name>glass_SDR</object-name>
+    <object-name>tailrotor-prop</object-name>
+    <object-name>lenz</object-name>
+  </animation>
+
+  <!-- REFUEL BOOM EXTEND -->
+
+  <animation>
+    <type>translate</type>
+    <object-name>refuel-boom</object-name>
+    <property>/gear/tailhook/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind>  <dep> 0.0  </dep></entry>
+      <entry><ind> 1.0  </ind> <dep> 2.3 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+
+<!-- TAIL BOOM FOLDING -->
+   <animation>
+    <type>rotate</type>
+	  <object-name>tail-boom</object-name>
+	  <object-name>stabilator-RH</object-name>
+	  <object-name>stabilator-LH</object-name>
+	<object-name>tailrotor1</object-name>
+        <object-name>tailrotor2</object-name>
+        <object-name>tailrotor3</object-name>
+        <object-name>tailrotor4</object-name>
+        <object-name>tailrotorHub</object-name>
+        <object-name>tailrotor-prop</object-name>
+        <object-name>tailrotorHUB.001</object-name>
+        <object-name>stabilator-CTR</object-name>
+	  <property>/controls/rotor/tailboom-fold-pos</property>
+	   <interpolation>
+		<entry> <ind> 0   </ind> <dep>   0 </dep> </entry>
+		<entry> <ind> 0.5 </ind> <dep>   0 </dep> </entry>
+		<entry> <ind> 1   </ind> <dep> 175 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m>  7.871 </x1-m>
+      <y1-m> -0.228 </y1-m>
+      <z1-m> -1.039 </z1-m>
+      <x2-m>  7.968 </x2-m>
+      <y2-m> -0.204 </y2-m>
+      <z2-m> -1.491 </z2-m>
+    </axis>
+  </animation>
+
+
+<!-- STABI FOLDING -->
+   <animation>
+    <type>rotate</type>
+	  <object-name>stabilator-LH</object-name>
+	  <property>/controls/rotor/tailboom-fold-pos</property>
+	   <interpolation>
+		<entry> <ind> 0   </ind> <dep>   0 </dep> </entry>
+		<entry> <ind> 0.5 </ind> <dep> -90 </dep> </entry>
+		<entry> <ind> 1   </ind> <dep> -90 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m>  9.423 </x1-m>
+      <y1-m> -0.183 </y1-m>
+      <z1-m> -0.854 </z1-m>
+      <x2-m>  9.713 </x2-m>
+      <y2-m> -0.183 </y2-m>
+      <z2-m> -1.159 </z2-m>
+    </axis>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+	  <object-name>stabilator-RH</object-name>
+	  <property>/controls/rotor/tailboom-fold-pos</property>
+	   <interpolation>
+		<entry> <ind> 0   </ind> <dep>  0 </dep> </entry>
+		<entry> <ind> 0.5 </ind> <dep> 90 </dep> </entry>
+		<entry> <ind> 1   </ind> <dep> 90 </dep> </entry>
+	   </interpolation>
+    <axis>
+      <x1-m>  9.423 </x1-m>
+      <y1-m>  0.183 </y1-m>
+      <z1-m> -0.854 </z1-m>
+      <x2-m>  9.713 </x2-m>
+      <y2-m>  0.183 </y2-m>
+      <z2-m> -1.159 </z2-m>
+    </axis>
+  </animation>
+
+
+<!-- PLATE BRACE -->
+	<animation>
+	<type>rotate</type>
+	<object-name>plate_brace</object-name>
+        <property>rotors/main/blade/position-deg</property>
+        <axis>
+           <x1-m> -0.002 </x1-m>
+           <y1-m>  0.000 </y1-m>
+           <z1-m>  0.322 </z1-m>
+           <x2-m> -0.009 </x2-m>
+           <y2-m>  0.000 </y2-m>
+           <z2-m>  0.433 </z2-m>
+        </axis>
+	</animation>
+
+
+<!-- MAIN ROTOR --> 
+  <model>
+  <name>MAINROTOR</name>
+    <path>Aircraft/UH-60J/Models/Rotor/rotor.xml</path>
+    <offsets>
+      <x-m> 0.03 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>  -3 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+	<type>rotate</type>
+	<object-name>MAINROTOR</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>2</factor>
+	<center>
+		<x-m>-0.004</x-m>
+		<y-m>-0.000</y-m>
+		<z-m> 0.665</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+  <animation>
+        <type>rotate</type>
+        <object-name>MAINROTOR</object-name>
+	<property>controls/flight/aileron</property>
+        <factor>2</factor>
+	<center>
+		<x-m>-0.004</x-m>
+		<y-m>-0.000</y-m>
+		<z-m> 0.665</z-m>
+	</center>
+	<axis>
+		<x>-1</x>
+		<y>0</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+<!-- TAIL ROTOR -->
+  <animation>
+	<type>rotate</type>
+	<object-name>tailrotor1</object-name>
+        <object-name>tailrotor2</object-name>
+        <object-name>tailrotor3</object-name>
+        <object-name>tailrotor4</object-name>
+        <object-name>tailrotorHub</object-name>
+        <object-name>tailrotor-prop</object-name>
+	<property>rotors/tail/blade/position-deg</property>
+        <axis>
+           <x1-m> 10.091 </x1-m>
+           <y1-m> 0.254 </y1-m>
+           <z1-m> 1.239 </z1-m>
+           <x2-m> 10.091 </x2-m>
+           <y2-m>  0.539 </y2-m>
+           <z2-m>  1.343 </z2-m>
+        </axis>
+   </animation>
+
+
+   <animation>
+    <type>rotate</type>
+	<object-name>tailrotor1</object-name>
+	  <property>rotors/tail/blade/incidence-deg</property>
+	  <axis>
+           <x1-m> 9.810 </x1-m>
+           <y1-m> 0.300 </y1-m>
+           <z1-m> 1.529 </z1-m>
+           <x2-m> 8.836 </x2-m>
+           <y2-m>-0.028 </y2-m>
+           <z2-m> 2.451 </z2-m>
+	  </axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+	<object-name>tailrotor2</object-name>
+	  <property>rotors/tail/blade/incidence-deg</property>
+	  <axis>
+           <x1-m> 10.349 </x1-m>
+           <y1-m> 0.292 </y1-m>
+           <z1-m> 1.551 </z1-m>
+           <x2-m>11.328 </x2-m>
+           <y2-m>-0.034 </y2-m>
+           <z2-m> 2.468 </z2-m>
+	  </axis>
+  </animation>
+
+   <animation>
+    <type>rotate</type>
+	<object-name>tailrotor3</object-name>
+	  <property>rotors/tail/blade/incidence-deg</property>
+	  <axis>
+           <x1-m> 10.371 </x1-m>
+           <y1-m> 0.477 </y1-m>
+           <z1-m> 1.044 </z1-m>
+           <x2-m>11.345 </x2-m>
+           <y2-m> 0.818 </y2-m>
+           <z2-m> 0.127 </z2-m>
+	  </axis>
+  </animation>
+
+
+   <animation>
+    <type>rotate</type>
+	<object-name>tailrotor4</object-name>
+	  <property>rotors/tail/blade/incidence-deg</property>
+	  <axis>
+           <x1-m> 9.833 </x1-m>
+           <y1-m> 0.484 </y1-m>
+           <z1-m> 1.024 </z1-m>
+           <x2-m> 8.854 </x2-m>
+           <y2-m> 0.824 </y2-m>
+           <z2-m> 0.111 </z2-m>
+	  </axis>
+  </animation>
+
+
+  <animation>
+    <type>select</type>
+        <object-name>tailrotor-prop</object-name>
+    <condition>
+   <and>
+     <greater-than>
+       <property>rotors/tail/rpm</property>
+       <value>1000</value>
+     </greater-than>
+    </and>
+    </condition>
+  </animation>
+
+<!-- STABILATOR -->
+  <animation>
+    <type>rotate</type>
+    <object-name>stabilator-LH</object-name>
+    <object-name>stabilator-CTR</object-name>
+    <object-name>stabilator-RH</object-name>
+    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  0</dep></entry>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+			<entry><ind>  30</ind><dep>  5</dep></entry>
+			<entry><ind>  90</ind><dep> 45</dep></entry>
+			<entry><ind> 150</ind><dep> 50</dep></entry>
+		</interpolation>
+	<center>
+		<x-m> 9.221</x-m>
+		<y-m>-0.183</y-m>
+		<z-m>-0.805</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+
+   <!-- Pushback -->
+   <model>
+   <name>Pushback</name>
+   <path>Aircraft/UH-60J/Models/towing_car/towing_car.xml</path>
+     <offsets>
+            <x-m> 8.0</x-m>
+            <y-m>-0.00</y-m>
+            <z-m>-2.6</z-m>
+    </offsets>
+   </model> 
+
+  <animation>
+    <type>select</type>
+    <object-name>Pushback</object-name>
+    <condition>
+     <and>
+      <property>sim/model/pushback/enabled</property>
+      <property>gear/gear[0]/wow</property>
+     </and>
+    </condition>
+  </animation>
+
+<!--Interior-->
+  <model>
+    <name>FRONT-PANEL</name>
+    <path>Aircraft/UH-60J/Models/Interior/panel.xml</path>
+    <offsets>
+      <x-m> -3.39 </x-m>
+      <y-m>  0   </y-m>
+      <z-m> -0.97 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>  -25 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CTR-CONSOLE</name>
+    <path>Aircraft/UH-60J/Models/Interior/console.xml</path>
+    <offsets>
+      <x-m> -3.4 </x-m>
+      <y-m>  0   </y-m>
+      <z-m> -1.14 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   5 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>HEADER-PANEL</name>
+    <path>Aircraft/UH-60J/Models/Interior/header.xml</path>
+    <offsets>
+      <x-m> -3.2 </x-m>
+      <y-m>  0   </y-m>
+      <z-m> -0.4 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   80 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>BACK-PANEL</name>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/AC-instr-bus/AC-instr-bus.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0   </y-m>
+      <z-m>  0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>EMERG-LEVER</name>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/emerg-lever/emerg-lever.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <!-- Immatriculatoin
+  <model>
+    <path>Aircraft/UH-60J/Models/Immat/immat.xml</path>
+    <offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model> 
+-->
+
+  <!-- SHADOW  -->
+  <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/UH-60J/Models/shadow.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> -2.55 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+ <animation>
+    <type>select</type>
+    <object-name>shadowOSG</object-name>
+    <condition>
+      <equals>
+        <property>/sim/rendering/rembrandt/enabled</property>
+        <value>false</value>
+      </equals>
+      <property>gear/gear/ground-is-solid</property>
+    </condition>
+  </animation>
+
+
+<!-- PILOT -->
+  <model>
+    <name>PILOT</name>
+    <path>Aircraft/UH-60J/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -2.8 </x-m>
+      <y-m> 0.63 </y-m>
+      <z-m> -1.10 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>COPILOT</name>
+    <path>Aircraft/UH-60J/Models/Pilot/tourpilot.xml</path>
+    <offsets>
+      <x-m> -2.8 </x-m>
+      <y-m> -0.63 </y-m>
+      <z-m> -1.10 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <name>E-PILOT</name>
+    <path>Aircraft/UH-60J/Models/Pilot/sensor-man.xml</path>
+    <offsets>
+      <x-m>  -0.35 </x-m>
+      <y-m>  0.7 </y-m>
+      <z-m> -1.25 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   -35 </pitch-deg>
+      <heading-deg> -80 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CABIN-SEAT0</name>
+    <path>Aircraft/UH-60J/Models/Pilot/seat.ac</path>
+    <offsets>
+      <x-m> 1.00 </x-m>
+      <y-m> -0.7 </y-m>
+      <z-m> -1.36 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CABIN-SEAT1</name>
+    <path>Aircraft/UH-60J/Models/Pilot/seat.ac</path>
+    <offsets>
+      <x-m> 1.00 </x-m>
+      <y-m> -0.2 </y-m>
+      <z-m> -1.36 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CABIN-SEAT2</name>
+    <path>Aircraft/UH-60J/Models/Pilot/seat.ac</path>
+    <offsets>
+      <x-m> 1.00 </x-m>
+      <y-m> 0.3 </y-m>
+      <z-m> -1.36 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CABIN-SEAT3</name>
+    <path>Aircraft/UH-60J/Models/Pilot/seat.ac</path>
+    <offsets>
+      <x-m> -1.40 </x-m>
+      <y-m> 0.70 </y-m>
+      <z-m> -1.36 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>CABIN-SEAT4</name>
+    <path>Aircraft/UH-60J/Models/Pilot/seat.ac</path>
+    <offsets>
+      <x-m> -1.40 </x-m>
+      <y-m> -0.70 </y-m>
+      <z-m> -1.36 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- SIDE DOOR -->
+
+  <animation>
+    <type>translate</type>
+    <object-name>glass_SDR</object-name>
+    <object-name>side-door</object-name>
+    <property>instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep> 0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 1.60</dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+
+  
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/UH-60J/Models/light/RedLight.xml</path>
+    <offsets>
+      <x-m> -1.336 </x-m>
+      <y-m> -2.890 </y-m>
+      <z-m> -0.131</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/UH-60J/Models/light/GreenLight.xml</path>
+    <offsets>
+      <x-m> -1.336 </x-m>
+      <y-m> 2.890 </y-m>
+      <z-m> -0.131</z-m>
+    </offsets>
+  </model>
+
+
+
+  <model>
+  <name>Tail-Light</name>
+    <path>Aircraft/UH-60J/Models/light/TailLight.xml</path>
+    <offsets>
+      <x-m> 10.859 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m> 1.296 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Tail-Light</object-name>
+    <condition>
+          <property>controls/lighting/nav-lights</property>
+    </condition>
+  </animation> 
+
+<!-- anti-collision light cone--> 
+
+  <model>
+  <name>anticollision-cone1</name>
+    <path>Aircraft/UH-60J/Models/light/anticollision-cone.xml</path>
+    <offsets>
+      <x-m> 5.490 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -1.968 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+  <name>anticollision-Light1</name>
+    <path>Aircraft/UH-60J/Models/light/anticollision_beacon2.xml</path>
+    <offsets>
+      <x-m> 5.490 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -1.968 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+  <name>anticollision-cone2</name>
+    <path>Aircraft/UH-60J/Models/light/anticollision-cone.xml</path>
+    <offsets>
+      <x-m> 10.521 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m>  1.460 </z-m>
+    </offsets>
+  </model>
+
+
+  <model>
+  <name>anticollision-Light2</name>
+    <path>Aircraft/UH-60J/Models/light/anticollision_beacon2.xml</path>
+    <offsets>
+      <x-m> 10.521 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m>  1.460 </z-m>
+    </offsets>
+  </model>
+
+<!--LANDING LT-->
+
+  <model>
+    <name>Landing-Light</name>
+    <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
+    <offsets>
+       <x-m> -3.50</x-m>
+      <y-m>  -0.6 </y-m>
+      <z-m> -2.1 </z-m>
+      <pitch-deg> -10.00 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>LandingLight</name>
+   <path>Aircraft/UH-60J/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m> -3.50</x-m>
+      <y-m>  -0.6 </y-m>
+      <z-m> -2.1 </z-m>
+      <pitch-deg> -10.00 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+     <object-name>Landing-Light</object-name>
+     <object-name>LandingLight</object-name>
+    <condition>
+        <equals>
+          <property>controls/switches/landing-light</property>
+          <value> 1 </value>
+        </equals>
+    </condition>
+  </animation>
+ 
+
+<!-- AIR HD LIGHT -->
+
+ <model>
+   <name>LandingLight-AIR</name>
+   <path>Aircraft/UH-60J/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m> -3.45</x-m>
+      <y-m>  0.7 </y-m>
+      <z-m> -2.1 </z-m>
+      <pitch-deg> 0.00 </pitch-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <name>Light-cone-AIR</name>
+    <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
+    <offsets>
+       <x-m> -3.45</x-m>
+      <y-m>  0.7 </y-m>
+      <z-m> -2.1 </z-m>
+      <pitch-deg> 0.00 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LandingLight-AIR</object-name>
+    <object-name>Light-cone-AIR</object-name>
+    <object-name>AIR_HD</object-name>
+    <condition>
+          <property>controls/switches/AIR_HD-light</property>
+    </condition>
+  </animation> 
+
+<!-- GND LIGHT -->
+
+ <model>
+   <name>LandingLight-GND</name>
+   <path>Aircraft/UH-60J/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m> -3.30</x-m>
+      <y-m>  0.7 </y-m>
+      <z-m> -2.0 </z-m>
+      <pitch-deg> -90.00 </pitch-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <name>Light-cone-GND</name>
+    <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
+    <offsets>
+       <x-m> -3.30</x-m>
+      <y-m>  0.7 </y-m>
+      <z-m> -1.8 </z-m>
+      <pitch-deg> -50.00 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LandingLight-GND</object-name>
+    <object-name>Light-cone-GND</object-name>
+    <condition>
+          <property>controls/switches/GND-light</property>
+    </condition>
+  </animation> 
+
+
+<!-- RAST LIGHT -->
+
+ <model>
+   <name>LandingLight-RAST</name>
+   <path>Aircraft/UH-60J/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m>  0.3 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -2.05</z-m>
+      <pitch-deg> -90.00 </pitch-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <name>Light-cone-RAST</name>
+    <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
+    <offsets>
+       <x-m> 0.3 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -2.05 </z-m>
+      <pitch-deg> -90.00 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LandingLight-RAST</object-name>
+    <object-name>Light-cone-RAST</object-name>
+    <condition>
+     <property>controls/switches/RAST-light</property>
+    </condition>
+  </animation> 
+
+<!-- CAB LIGHT -->
+
+ <model>
+   <name>LandingLight-CAB</name>
+   <path>Aircraft/UH-60J/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m>  0.05 </x-m>
+      <y-m>  1.4 </y-m>
+      <z-m>  -0.17</z-m>
+      <pitch-deg> -60.00 </pitch-deg>
+      <heading-deg> -90.00 </heading-deg>
+    </offsets>
+  </model>
+
+
+  <model>
+    <name>Light-cone-CAB</name>
+    <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
+    <offsets>
+       <x-m> 0.01 </x-m>
+      <y-m>  1.3 </y-m>
+      <z-m>  0.5 </z-m>
+      <pitch-deg> -60.00 </pitch-deg>
+      <heading-deg> -90.00 </heading-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>LandingLight-CAB</object-name>
+    <object-name>Light-cone-CAB</object-name>
+    <condition>
+          <property>controls/switches/cabdome-light</property>
+    </condition>
+  </animation> 
+
+
+<!-- LH gear -->
+  <animation>
+	<type>translate</type>
+	<object-name>tire-LH</object-name>
+        <object-name>hub-LH</object-name>
+        <object-name>dump-LH</object-name>
+        <property>gear/gear[0]/compression-norm</property>
+        <factor>0.32</factor>
+	<center>
+		<x-m>-1.101</x-m>
+		<y-m>-1.411</y-m>
+		<z-m>-2.411</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>spin</type>
+	<object-name>tire-LH</object-name>
+        <property>gear/gear[0]/rollspeed-ms</property>
+        <factor>7</factor>
+	<center>
+		<x-m>-1.101</x-m>
+		<y-m>-1.411</y-m>
+		<z-m>-2.411</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>dump-out-LH</object-name>
+        <object-name>dumper-LH</object-name>
+        <property>gear/gear[0]/compression-norm</property>
+        <factor>20</factor>
+	<center>
+		<x-m>-1.810</x-m>
+		<y-m>-1.142</y-m>
+		<z-m>-1.923</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+<!-- RH gear -->
+  <animation>
+	<type>translate</type>
+	<object-name>tire-RH</object-name>
+        <object-name>hub-RH</object-name>
+        <object-name>dump-RH</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>0.32</factor>
+	<center>
+		<x-m>-1.101</x-m>
+		<y-m>1.411</y-m>
+		<z-m>-2.411</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>spin</type>
+	<object-name>tire-RH</object-name>
+        <property>gear/gear[1]/rollspeed-ms</property>
+        <factor>7</factor>
+	<center>
+		<x-m>-1.101</x-m>
+		<y-m> 1.411</y-m>
+		<z-m>-2.411</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>dump-out-RH</object-name>
+        <object-name>dumper-RH</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <factor>20</factor>
+	<center>
+		<x-m>-1.810</x-m>
+		<y-m> 1.142</y-m>
+		<z-m>-1.923</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+<!-- RR gear -->
+
+
+  <animation>
+	<type>rotate</type>
+	<object-name>tire-RR</object-name>
+        <object-name>hub-LWR</object-name>
+        <object-name>hub-UPR</object-name>
+        <object-name>dump-RR.001</object-name>
+        <property>gear/gear[2]/compression-norm</property>
+        <factor>12</factor>
+	<center>
+		<x-m>6.851</x-m>
+		<y-m>0.000</y-m>
+		<z-m>-1.724</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+	<object-name>tire-RR</object-name>
+        <object-name>hub-LWR</object-name>
+        <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+        <factor>25</factor>
+        <condition>
+         <not>
+          <property>controls/gear/tailwheel-lock</property>
+         </not>
+        </condition>
+	<center>
+		<x-m>7.647</x-m>
+		<y-m>0.000</y-m>
+		<z-m>-2.189</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>dump-RR.001</object-name>
+        <property>gear/gear[2]/compression-norm</property>
+        <factor>12</factor>
+	<center>
+		<x-m>7.239</x-m>
+		<y-m>0.000</y-m>
+		<z-m>-1.952</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+  <animation>
+	<type>spin</type>
+	<object-name>tire-RR</object-name>
+        <property>gear/gear[2]/rollspeed-ms</property>
+        <factor>7</factor>
+	<center>
+		<x-m>8.00</x-m>
+		<y-m>0.000</y-m>
+		<z-m>-2.553</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>-1</y>
+		<z>0</z>
+	</axis>
+   </animation>
+
+
+</PropertyList>
+

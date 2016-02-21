@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>CDI1.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+        <object-name>key</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>green</object-name>
+        <object-name>display</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+
+   <animation>
+        <type>select</type>
+        <object-name>comm_period</object-name>
+        <object-name>green</object-name>
+        <object-name>display</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+ 
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+
+
+
+
+</PropertyList>
+
+
+
+
+
+

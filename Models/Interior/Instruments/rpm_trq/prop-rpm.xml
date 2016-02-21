@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>prop-rpm.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>rpm1</object-name>
+        <object-name>rpm2</object-name>
+        <object-name>rpmR</object-name>
+        <object-name>trq1</object-name>
+        <object-name>trq2</object-name>
+     <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>digit10R</object-name>
+        <object-name>digit1R</object-name>
+        <object-name>digit10L</object-name>
+        <object-name>digit1L</object-name>
+     <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Cube</object-name>
+     <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+
+  <animation>
+    <type>select</type>
+        <object-name>rpm1</object-name>
+        <object-name>rpm2</object-name>
+        <object-name>rpmR</object-name>
+        <object-name>trq1</object-name>
+        <object-name>trq2</object-name>
+        <object-name>digit10R</object-name>
+        <object-name>digit1R</object-name>
+        <object-name>digit10L</object-name>
+        <object-name>digit1L</object-name>
+    <condition>
+		<greater-than>
+			<property>systems/electrical/volts</property>
+			<value>16</value>
+		</greater-than>
+    </condition>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>rpm1</object-name>
+    <property>engines/engine[0]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>50</ind><dep>0.05</dep></entry>
+       <entry><ind>70</ind><dep>0.14</dep></entry>
+       <entry><ind>90</ind><dep>0.225</dep></entry>
+       <entry><ind>95</ind><dep>0.31</dep></entry>
+       <entry><ind>100</ind><dep>0.40</dep></entry>
+       <entry><ind>105</ind><dep>0.49</dep></entry>
+       <entry><ind>110</ind><dep>0.58</dep></entry>
+       <entry><ind>120</ind><dep>0.67</dep></entry>
+       <entry><ind>130</ind><dep>0.74</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>rpm2</object-name>
+    <property>engines/engine[1]/n2-pct</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>50</ind><dep>0.05</dep></entry>
+       <entry><ind>70</ind><dep>0.14</dep></entry>
+       <entry><ind>90</ind><dep>0.225</dep></entry>
+       <entry><ind>95</ind><dep>0.31</dep></entry>
+       <entry><ind>100</ind><dep>0.40</dep></entry>
+       <entry><ind>105</ind><dep>0.49</dep></entry>
+       <entry><ind>110</ind><dep>0.58</dep></entry>
+       <entry><ind>120</ind><dep>0.67</dep></entry>
+       <entry><ind>130</ind><dep>0.74</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>rpmR</object-name>
+    <property>rotors/main/rpm</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>}
+       <entry><ind>0</ind><dep>0.0</dep></entry>
+       <entry><ind>250</ind><dep>0.05</dep></entry>
+       <entry><ind>350</ind><dep>0.14</dep></entry>
+       <entry><ind>450</ind><dep>0.225</dep></entry>
+       <entry><ind>475</ind><dep>0.31</dep></entry>
+       <entry><ind>500</ind><dep>0.40</dep></entry>
+       <entry><ind>525</ind><dep>0.49</dep></entry>
+       <entry><ind>550</ind><dep>0.58</dep></entry>
+       <entry><ind>600</ind><dep>0.67</dep></entry>
+       <entry><ind>650</ind><dep>0.74</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>trq1</object-name>
+    <object-name>trq2</object-name>
+    <property>rotors/gear/total-torque</property>
+    <factor></factor>
+    <offset></offset>
+    <interpolation>
+       <entry><ind>       0 </ind><dep> 0.00 </dep></entry>
+       <entry><ind>  250000 </ind><dep> 0.040 </dep></entry>
+       <entry><ind>  400000 </ind><dep> 0.075 </dep></entry>
+       <entry><ind>  600000 </ind><dep> 0.109 </dep></entry>
+       <entry><ind>  800000 </ind><dep> 0.143 </dep></entry>
+       <entry><ind> 1000000 </ind><dep> 0.178 </dep></entry>
+       <entry><ind> 1200000 </ind><dep> 0.217 </dep></entry>
+       <entry><ind> 1400000 </ind><dep> 0.240 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- DIGIT -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit10L</object-name>
+    <property>rotors/gear/total-torque</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <min>0</min>
+        <bias></bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit1L</object-name>
+    <property>rotors/gear/total-torque</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+     <animation>
+        <type>textranslate</type>
+        <object-name>digit10R</object-name>
+    <property>rotors/gear/total-torque</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>digit1R</object-name>
+    <property>rotors/gear/total-torque</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <min>0</min>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+
+</PropertyList>

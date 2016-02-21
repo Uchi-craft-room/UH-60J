@@ -1,0 +1,2195 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <path>CDI2.ac</path>
+
+<!-- LIGHTING -->
+
+  <animation>
+        <object-name>base</object-name>
+        <object-name>switch</object-name>
+        <object-name>btn</object-name>
+        <object-name>CDI_btn</object-name>
+        <object-name>COMM1_btn</object-name>
+        <object-name>COMM1_XFER_btn</object-name>
+        <object-name>COMM1_STBY_btn</object-name>
+        <object-name>COMM2_btn</object-name>
+        <object-name>COMM2_XFER_btn</object-name>
+        <object-name>COMM2_STBY_btn</object-name>
+        <object-name>VOR_btn</object-name>
+        <object-name>VOR_XFER_btn</object-name>
+        <object-name>VOR_STBY_btn</object-name>
+        <object-name>TACAN_btn</object-name>
+        <object-name>TACAN_x_btn</object-name>
+        <object-name>TACAN_y_btn</object-name>
+        <object-name>PAGE_UP_btn</object-name>
+        <object-name>PAGE_DOWN_btn</object-name>
+        <object-name>A_knob</object-name>
+        <object-name>B_knob</object-name>
+        <object-name>A_knob_comm1_stby</object-name>
+        <object-name>B_knob_comm1_stby</object-name>
+        <object-name>A_knob_comm2</object-name>
+        <object-name>B_knob_comm2</object-name>
+        <object-name>A_knob_comm2_stby</object-name>
+        <object-name>B_knob_comm2_stby</object-name>
+        <object-name>A_knob_vor</object-name>
+        <object-name>B_knob_vor</object-name>
+        <object-name>A_knob_vor_stby</object-name>
+        <object-name>B_knob_vor_stby</object-name>
+     <type>material</type>
+     <emission> 
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        <red>  0.5 </red>
+        <green>0.25</green>
+        <blue> 0.25</blue>
+      </emission>
+  </animation> 
+
+  <animation>
+        <object-name>green</object-name>
+        <object-name>comm_period</object-name>
+        <object-name>comm1</object-name>
+        <object-name>comm1_d1</object-name>
+        <object-name>comm1_d2</object-name>
+        <object-name>comm1_d3</object-name>
+        <object-name>comm1_d4</object-name>
+        <object-name>comm1_d5</object-name>
+        <object-name>comm1_d6</object-name>
+        <object-name>comm1_rcv</object-name>
+        <object-name>comm1_sel</object-name>
+        <object-name>comm1_stby</object-name>
+        <object-name>comm1_stby_d1</object-name>
+        <object-name>comm1_stby_d2</object-name>
+        <object-name>comm1_stby_d3</object-name>
+        <object-name>comm1_stby_d4</object-name>
+        <object-name>comm1_stby_d5</object-name>
+        <object-name>comm1_stby_d6</object-name>
+        <object-name>comm1_stby_sel</object-name>
+        <object-name>comm2</object-name>
+        <object-name>comm2_d1</object-name>
+        <object-name>comm2_d2</object-name>
+        <object-name>comm2_d3</object-name>
+        <object-name>comm2_d4</object-name>
+        <object-name>comm2_d5</object-name>
+        <object-name>comm2_d6</object-name>
+        <object-name>comm2_rcv</object-name>
+        <object-name>comm2_sel</object-name>
+        <object-name>comm2_stby</object-name>
+        <object-name>comm2_stby_d1</object-name>
+        <object-name>comm2_stby_d2</object-name>
+        <object-name>comm2_stby_d3</object-name>
+        <object-name>comm2_stby_d4</object-name>
+        <object-name>comm2_stby_d5</object-name>
+        <object-name>comm2_stby_d6</object-name>
+        <object-name>comm2_stby_sel</object-name>
+        <object-name>vor</object-name>
+        <object-name>vor_d1</object-name>
+        <object-name>vor_d2</object-name>
+        <object-name>vor_d3</object-name>
+        <object-name>vor_d4</object-name>
+        <object-name>vor_d5</object-name>
+        <object-name>vor_d6</object-name>
+        <object-name>vor_rcv</object-name>
+        <object-name>vor_sel</object-name>
+        <object-name>vor_stby</object-name>
+        <object-name>vor_stby_d1</object-name>
+        <object-name>vor_stby_d2</object-name>
+        <object-name>vor_stby_d3</object-name>
+        <object-name>vor_stby_d4</object-name>
+        <object-name>vor_stby_d5</object-name>
+        <object-name>vor_stby_d6</object-name>
+        <object-name>vor_stby_sel</object-name>
+        <object-name>tacan</object-name>
+        <object-name>tacan_d1</object-name>
+        <object-name>tacan_d2</object-name>
+        <object-name>tacan_d3</object-name>
+        <object-name>tacan_x</object-name>
+        <object-name>tacan_y</object-name>
+        <object-name>tacan_rcv</object-name>
+        <object-name>tacan_sel</object-name>
+     <type>material</type>
+     <emission> 
+        <red>  1 </red>
+        <green>1</green>
+        <blue> 1</blue>
+      </emission>
+  </animation> 
+
+<!-- ********************* PAGE BUTTON ***************** -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>PAGE_UP_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/page</property>
+            <value></value>
+            </binding>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value></value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>PAGE_DOWN_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </binding>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- ********************* INPUT SELECT ***************** -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM1_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value></value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM1_STBY_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM1_STBY</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM2_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM2_STBY_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2_STBY</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>VOR_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>VOR_STBY_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR_STBY</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>TACAN_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-assign</command>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>TACAN</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- ********************* INPUT ACTIVE SEL ***************** -->
+<!-- SELECT 1 -->
+
+
+
+<!-- ************************** COMM1 ********************* -->
+
+   <animation>
+        <type>select</type>
+        <object-name>comm_period</object-name>
+        <object-name>green</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm1</object-name>
+        <object-name>comm1_d1</object-name>
+        <object-name>comm1_d2</object-name>
+        <object-name>comm1_d3</object-name>
+        <object-name>comm1_d4</object-name>
+        <object-name>comm1_d5</object-name>
+        <object-name>comm1_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm1_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm1_rcv</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <property>instrumentation/comm/height-above-station-ft</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob</object-name>
+        <object-name>B_knob</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d6</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d5</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d4</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d3</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d2</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_d1</object-name>
+        <property>instrumentation/VHF-22/comm1</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm1</property>
+                <step>-25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm1</property>
+                <step>25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm1</property>
+                <step>-1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm1</property>
+                <step>1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- ************************ COMM1 STBY************************** -->
+
+
+    <animation>
+        <type>select</type>
+        <object-name>comm1_stby</object-name>
+        <object-name>comm1_stby_d1</object-name>
+        <object-name>comm1_stby_d2</object-name>
+        <object-name>comm1_stby_d3</object-name>
+        <object-name>comm1_stby_d4</object-name>
+        <object-name>comm1_stby_d5</object-name>
+        <object-name>comm1_stby_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_comm1_stby</object-name>
+        <object-name>B_knob_comm1_stby</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM1_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm1_stby_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM1_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_comm1_stby</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_comm1_stby</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d6</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d5</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d4</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d3</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d2</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm1_stby_d1</object-name>
+        <property>instrumentation/VHF-22/standby1</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm1_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby1</property>
+                <step>-25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm1_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby1</property>
+                <step>25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm1_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby1</property>
+                <step>-1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm1_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby1</property>
+                <step>1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- *********************** XFER COMM1 *************** -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM1_XFER_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-swap</command>
+            <property>instrumentation/VHF-22/comm1</property>
+            <property>instrumentation/VHF-22/standby1</property>
+        </binding>
+        </action>
+    </animation>
+
+<!-- ************************** COMM2 ********************* -->
+
+    <animation>
+        <type>select</type>
+        <object-name>comm2</object-name>
+        <object-name>comm2_d1</object-name>
+        <object-name>comm2_d2</object-name>
+        <object-name>comm2_d3</object-name>
+        <object-name>comm2_d4</object-name>
+        <object-name>comm2_d5</object-name>
+        <object-name>comm2_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm2_rcv</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <property>instrumentation/comm[1]/height-above-station-ft</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_comm2</object-name>
+        <object-name>B_knob_comm2</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm2_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_comm2</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_comm2</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d6</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d5</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d4</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d3</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d2</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_d1</object-name>
+        <property>instrumentation/VHF-22/comm2</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm2</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>-25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm2</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm2</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>-1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm2</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/comm2</property>
+                <step>1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- ************************ COMM2 STBY************************** -->
+
+
+    <animation>
+        <type>select</type>
+        <object-name>comm2_stby</object-name>
+        <object-name>comm2_stby_d1</object-name>
+        <object-name>comm2_stby_d2</object-name>
+        <object-name>comm2_stby_d3</object-name>
+        <object-name>comm2_stby_d4</object-name>
+        <object-name>comm2_stby_d5</object-name>
+        <object-name>comm2_stby_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_comm2_stby</object-name>
+        <object-name>B_knob_comm2_stby</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>comm2_stby_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value></value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>COMM2_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_comm2_stby</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_comm2_stby</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d6</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.000001</factor>
+        <step>100000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d5</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d4</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d3</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d2</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>comm2_stby_d1</object-name>
+        <property>instrumentation/VHF-22/standby2</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm2_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby2</property>
+                <step>-25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_comm2_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby2</property>
+                <step>25</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm2_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby2</property>
+                <step>-1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_comm2_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VHF-22/standby2</property>
+                <step>1000</step>
+                <min>118000</min>
+                <max>135975</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- *********************** XFER COMM2 *************** -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>COMM2_XFER_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-swap</command>
+            <property>instrumentation/VHF-22/comm2</property>
+            <property>instrumentation/VHF-22/standby2</property>
+        </binding>
+        </action>
+    </animation>
+
+<!-- ************************** VOR ********************* -->
+
+    <animation>
+        <type>select</type>
+        <object-name>vor</object-name>
+        <object-name>vor_d1</object-name>
+        <object-name>vor_d2</object-name>
+        <object-name>vor_d3</object-name>
+        <object-name>vor_d4</object-name>
+        <object-name>vor_d5</object-name>
+        <object-name>vor_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/nav</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>vor_rcv</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/nav</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <not>
+            <equals>
+            <property>instrumentation/nav/nav-id</property>
+            <value></value>
+            </equals>
+            </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_vor</object-name>
+        <object-name>B_knob_vor</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>vor_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/nav</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_vor</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_vor</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_d6</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_d5</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_d4</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_d3</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_d2</object-name>
+        <property>instrumentation/VIR-32/nav1</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_vor</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/nav1</property>
+                <step>-5</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_vor</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/nav1</property>
+                <step>5</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_vor</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/nav1</property>
+                <step>-100</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_vor</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/nav1</property>
+                <step>100</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- ************************ VOR STBY************************** -->
+
+
+    <animation>
+        <type>select</type>
+        <object-name>vor_stby</object-name>
+        <object-name>vor_stby_d1</object-name>
+        <object-name>vor_stby_d2</object-name>
+        <object-name>vor_stby_d3</object-name>
+        <object-name>vor_stby_d4</object-name>
+        <object-name>vor_stby_d5</object-name>
+        <object-name>vor_stby_d6</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/nav</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_vor_stby</object-name>
+        <object-name>B_knob_vor_stby</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>vor_stby_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+               <property>systems/electrical/outputs/nav</property>
+               <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>VOR_STBY</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_vor_stby</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_vor_stby</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_stby_d6</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.00001</factor>
+        <step>10000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_stby_d5</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.0001</factor>
+        <step>1000</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_stby_d4</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_stby_d3</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>vor_stby_d2</object-name>
+        <property>instrumentation/VIR-32/standby1</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_vor_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/standby1</property>
+                <step>-5</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_vor_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/standby1</property>
+                <step>5</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_vor_stby</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/standby1</property>
+                <step>-100</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_vor_stby</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <interval-sec>0.2</interval-sec>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/VIR-32/standby1</property>
+                <step>100</step>
+                <min>10800</min>
+                <max>11795</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+<!-- *********************** XFER VOR *************** -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>VOR_XFER_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            <command>property-swap</command>
+            <property>instrumentation/VIR-32/nav1</property>
+            <property>instrumentation/VIR-32/standby1</property>
+        </binding>
+        </action>
+    </animation>
+
+<!-- ****************** TACAN **************************** -->
+
+    <animation>
+        <type>select</type>
+        <object-name>tacan</object-name>
+        <object-name>tacan_d1</object-name>
+        <object-name>tacan_d2</object-name>
+        <object-name>tacan_d3</object-name>
+        <object-name>tacan_x</object-name>
+        <object-name>tacan_y</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>tacan_x</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+	    <equals>
+		<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+		<value>X</value>
+	    </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>tacan_y</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+	    <equals>
+		<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+		<value>Y</value>
+	    </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>tacan_sel</object-name>
+        <condition>
+            <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>TACAN</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>tacan_rcv</object-name>
+        <condition>
+           <and>
+            <greater-than>
+                <property>systems/electrical/outputs/comm</property>
+                <value>1</value>
+            </greater-than>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <not>
+               <equals>
+                <property>instrumentation/tacan/display/x-shift</property>
+                <value> 0 </value>
+               </equals>
+            </not>
+           </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>A_knob_tacan</object-name>
+        <object-name>B_knob_tacan</object-name>
+        <condition>
+            <and>
+            <equals>
+                <property>instrumentation/cdi2/page</property>
+                <value>1</value>
+            </equals>
+            <equals>
+            <property>instrumentation/cdi2/input_select</property>
+            <value>TACAN</value>
+            </equals>
+            </and>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>rotate</type>
+        <object-name>A_knob_tacan</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel</property>
+        <factor>0.05</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m>-0.000</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>B_knob_tacan</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel</property>
+        <factor>0.36</factor>
+        <center>
+            <x-m> 0.005</x-m>
+            <y-m> 0.033</y-m>
+            <z-m>-0.250</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!--    Active Frequency   -->
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>tacan_d3</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[1]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>tacan_d2</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[2]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>tacan_d1</object-name>
+        <property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+        <factor>0.1</factor>
+        <offset>-0.0</offset>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>TACAN_x_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+                <value>X</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>TACAN_y_btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+                <value>Y</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_tacan</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>10</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>A_knob_tacan</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>-10</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_tacan</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>1</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>B_knob_tacan</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/tacan/frequencies/selected-channel</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>126</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+    </animation>
+    
+    <animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+
+
+
+
+</PropertyList>
+
+
+
+
+
+
