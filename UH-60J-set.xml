@@ -4,7 +4,7 @@
 	<sim >
 
 		<description>Mitsubishi UH-60J (YASim)</description>
-		<author>Hitoshi Uchida(3D/FDM)</author>
+		<author>Hitoshi Uchida(3D/FDM), TheFoxtrotBravo, Necolatis (damage.nas)</author>
 		<status>1.1</status>
 		<license>GPL v2</license>
 
@@ -446,6 +446,9 @@
   		<aar>
   		    <file>Aircraft/Generic/aar.nas</file>
   		</aar>
+				<damage>
+						<file>Aircraft/SH-60J/Nasal/damage.nas</file>
+				</damage>
 	</nasal>
 
 	<rotors>
