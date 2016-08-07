@@ -343,17 +343,6 @@
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/UH-60J/Models/Interior/Instruments/knob/knob.xml</path>
-    <offsets>
-      <x-m> 0.003 </x-m>
-      <y-m> 0.160 </y-m>
-      <z-m> 0.398 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model>
 
 
   <model>
@@ -406,26 +395,28 @@
   </model>
 
 
-
+<!-- WINDSHILD-ANTI-ICE-CPLT-->
 <model>
-    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/anti-ice/anti-ice.xml</path>
     <offsets>
       <x-m> 0.003 </x-m>
       <y-m> 0.22 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
+
+<!-- WINDSHILD-ANTI-ICE-PILOT-->
 <model>
-    <path>Aircraft/UH-60J/Models/Interior/Instruments/switches/switch.xml</path>
+    <path>Aircraft/UH-60J/Models/Interior/Instruments/anti-ice/anti-ice.xml</path>
     <offsets>
       <x-m> 0.003 </x-m>
       <y-m> 0.260 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -437,7 +428,7 @@
       <x-m> 0.003 </x-m>
       <y-m> 0.175 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -449,7 +440,7 @@
       <x-m> 0.003 </x-m>
       <y-m> 0.135 </y-m>
       <z-m> 0.195 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -461,7 +452,7 @@
       <x-m> 0.003 </x-m>
       <y-m> 0.140 </y-m>
       <z-m> 0.125 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -473,7 +464,7 @@
       <x-m> 0.003 </x-m>
       <y-m> 0.197 </y-m>
       <z-m> 0.125 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -485,7 +476,7 @@
       <x-m> 0.003 </x-m>
       <y-m> 0.250 </y-m>
       <z-m> 0.125 </z-m>
-      <roll-deg>    0 </roll-deg>
+      <roll-deg>    180 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
@@ -514,12 +505,6 @@
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
-
-
-
-
-
-
 
 
 <!-- ********************* FLIGHT_LT_console ******************** -->

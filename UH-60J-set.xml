@@ -4,18 +4,13 @@
 	<sim >
 
 		<description>Mitsubishi UH-60J (YASim)</description>
-		<author>Hitoshi Uchida(3D/FDM), TheFoxtrotBravo, Necolatis (damage.nas)</author>
-		<status>1.1</status>
-		<license>GPL v2</license>
-
+		<author>Hitoshi Uchida(3D/FDM)</author>
+		<status>v1.2</status>
 		<flight-model>yasim</flight-model>
 		<aero>UH-60J</aero>
-
 		<fuel-fraction>0.5</fuel-fraction>
-
-
 		<startup>
-			<splash-texture>Aircraft/UH-60J/splash.png</splash-texture>
+		  <splash-texture>Aircraft/UH-60J/splash.png</splash-texture>
 		</startup>
 
    <airport>
@@ -427,6 +422,7 @@
                        <file>Aircraft/UH-60J/Nasal/vir32.nas</file>
                        <file>Aircraft/UH-60J/Nasal/instruments.nas</file>
                        <file>Aircraft/UH-60J/Nasal/electrical.nas</file>
+                       <file>Aircraft/UH-60J/Nasal/wiper.nas</file>
                 </UH-60J>
 		<doors>
                        <file>Aircraft/UH-60J/Nasal/doors.nas</file>

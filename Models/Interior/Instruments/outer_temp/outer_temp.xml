@@ -23,7 +23,7 @@
     <animation>
         <type>rotate</type>
         <object-name>PropRPMneedle</object-name>
-        <property>environment/temperature-degc</property>
+        <property>environment/total-air-temperature-degc</property>
         <interpolation>
             <entry><ind>-50</ind><dep>-135</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>
@@ -37,19 +37,5 @@
     </animation>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

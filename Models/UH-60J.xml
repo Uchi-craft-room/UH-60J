@@ -4,6 +4,26 @@
 
   <path>UH-60J.ac</path>
 
+
+ <!-- Canopy -->
+    <animation>
+        <type>select</type>
+        <condition>
+            <not>
+                <property>/sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+    <object-name>glass-inn</object-name>
+    <object-name>glass-wipe</object-name>
+    </animation>
+
+<!-- Uncomment this section for FG 3.5 ALS Glass effects -->
+    <effect>
+        <inherits-from>Effects/glass</inherits-from>
+    <object-name>glass-inn</object-name>
+    <object-name>glass-wipe</object-name>
+    </effect>
+
 <!--  Specularity fix
   <animation>
     <type>material</type>
@@ -1342,6 +1362,132 @@
 		<y>-1</y>
 		<z>0</z>
 	</axis>
+   </animation>
+
+
+<!-- WIPER-RH -->
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-arm-RH</object-name>
+        <object-name>wiper-blade-RH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> 65</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.725 </x1-m>
+           <y1-m>  0.633 </y1-m>
+           <z1-m> -0.950 </z1-m>
+           <x2-m> -3.780 </x2-m>
+           <y2-m>  0.644 </y2-m>
+           <z2-m> -0.891 </z2-m>
+	  </axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-blade-RH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> -65</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.526 </x1-m>
+           <y1-m>  0.404 </y1-m>
+           <z1-m> -0.675 </z1-m>
+           <x2-m> -3.544 </x2-m>
+           <y2-m>  0.404 </y2-m>
+           <z2-m> -0.655 </z2-m>
+	  </axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-arm2-RH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> 78</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.771 </x1-m>
+           <y1-m>  0.583 </y1-m>
+           <z1-m> -0.928 </z1-m>
+           <x2-m> -3.792 </x2-m>
+           <y2-m>  0.593 </y2-m>
+           <z2-m> -0.883 </z2-m>
+	  </axis>
+   </animation>
+
+  <animation>
+	<type>select</type>
+        <object-name>glass-wipe</object-name>
+	<condition>
+            <or>
+            <less-than>
+              <property>/controls/special/wiper-deg</property>
+              <value>20</value>
+            </less-than>
+           </or>
+	</condition>
+   </animation>
+
+<!-- WIPER-LH -->
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-arm-LH</object-name>
+        <object-name>wiper-blade-LH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> -65</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.725 </x1-m>
+           <y1-m> -0.633 </y1-m>
+           <z1-m> -0.950 </z1-m>
+           <x2-m> -3.780 </x2-m>
+           <y2-m> -0.644 </y2-m>
+           <z2-m> -0.891 </z2-m>
+	  </axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-blade-LH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> 65</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.526 </x1-m>
+           <y1-m> -0.404 </y1-m>
+           <z1-m> -0.675 </z1-m>
+           <x2-m> -3.544 </x2-m>
+           <y2-m> -0.404 </y2-m>
+           <z2-m> -0.655 </z2-m>
+	  </axis>
+   </animation>
+
+  <animation>
+	<type>rotate</type>
+        <object-name>wiper-arm2-LH</object-name>
+        <property>/controls/special/wiper-deg</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>  0</dep></entry>
+	    <entry><ind>110</ind><dep> -78</dep></entry>
+	</interpolation>
+	  <axis>
+           <x1-m> -3.771 </x1-m>
+           <y1-m> -0.583 </y1-m>
+           <z1-m> -0.928 </z1-m>
+           <x2-m> -3.792 </x2-m>
+           <y2-m> -0.593 </y2-m>
+           <z2-m> -0.883 </z2-m>
+	  </axis>
    </animation>
 
 
