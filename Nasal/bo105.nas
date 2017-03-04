@@ -1,8 +1,6 @@
 # (c) Melchior FRANZ  < mfranz # flightgear : org >
 
 
-
-
 if (!contains(globals, "cprint"))
 	var cprint = func nil;
 
@@ -131,15 +129,15 @@ var Tank = {
 var fuel = {
 	init: func {
 		var fuel = props.globals.getNode("/consumables/fuel");
-		me.pump_capacity = 2 * L2GAL / 60; # same pumps for transfer and supply; from ec135: 6.6 l/min
+		me.pump_capacity = 6.6 * L2GAL / 60; # same pumps for transfer and supply; from ec135: 6.6 l/min
 		me.total_galN = fuel.getNode("total-fuel-gals", 1);
 		me.total_lbN = fuel.getNode("total-fuel-lbs", 1);
 		me.total_normN = fuel.getNode("total-fuel-norm", 1);
-		me.main1 = Tank.new(fuel.getNode("tank[0]"));
-                me.main2 = Tank.new(fuel.getNode("tank[1]"));
+		me.main = Tank.new(fuel.getNode("tank[0]"));
+		me.main2 = Tank.new(fuel.getNode("tank[1]"));
 		me.supply = Tank.new(fuel.getNode("tank[2]"));
                 me.ext1 = Tank.new(fuel.getNode("tank[3]"));
-                me.ext2 = Tank.new(fuel.getNode("tank[4]"));;
+                me.ext2 = Tank.new(fuel.getNode("tank[4]"));
 
 		var sw = props.globals.getNode("/controls/switches");
 		setlistener(sw.initNode("fuel/transfer-pump[0]", 1, "BOOL"), func(n) me.trans1 = n.getValue(), 1);
@@ -148,7 +146,7 @@ var fuel = {
 		setlistener(sw.initNode("fuel/transfer-pump[3]", 1, "BOOL"), func(n) me.trans4 = n.getValue(), 1);
 		setlistener(sw.initNode("fuel/transfer-pump[3]", 1, "BOOL"), func(n) me.trans5 = n.getValue(), 1);
 		setlistener("/sim/freeze/fuel", func(n) me.freeze = n.getBoolValue(), 1);
-		me.capacity = me.main1.capacity + me.main2.capacity + me.supply.capacity + me.ext1.capacity + me.ext2.capacity;
+		me.capacity = me.main.capacity + me.main2.capacity + me.supply.capacity + me.ext1.capacity + me.ext2.capacity;
 		me.warntime = 0;
 		me.update(0);
 	},
@@ -157,20 +155,20 @@ var fuel = {
 		var free = me.supply.capacity - me.supply.level();
 		if (free > 0) {
 			var trans_flow = (me.trans1 + me.trans2) * me.pump_capacity;
-			me.supply.consume(-me.main1.consume(min(trans_flow * dt, free)));
+			me.supply.consume(-me.main.consume(min(trans_flow * dt, free)));
                         me.supply.consume(-me.main2.consume(min(trans_flow * dt, free)));
                         me.supply.consume(-me.ext1.consume(min(trans_flow * dt, free)));
                         me.supply.consume(-me.ext2.consume(min(trans_flow * dt, free)));
 		}
 
 		# low fuel warning [POH "General Description" 0.28a]
-		#var time = elapsedN.getValue();
-		#if (time > me.warntime and me.supply.level() * GAL2KG < 60) {
-			#screen.log.write("LOW FUEL WARNING", 1, 0, 0);
-			#me.warntime = time + screen.log.autoscroll * 2;
-		#}
+		var time = elapsedN.getValue();
+		if (time > me.warntime and me.supply.level() * GAL2KG < 30) {
+			screen.log.write("LOW FUEL WARNING", 1, 0, 0);
+			me.warntime = time + screen.log.autoscroll * 2;
+		}
 
-		var level = me.main1.level() + me.main2.level() + me.supply.level() + me.ext1.level()+ me.ext2.level();
+		var level = me.main.level() + me.main2.level() + me.supply.level() + me.ext1.level()+ me.ext2.level();
 		me.total_galN.setDoubleValue(level);
 		me.total_lbN.setDoubleValue(level * GAL2LB);
 		me.total_normN.setDoubleValue(level / me.capacity);
@@ -655,7 +653,7 @@ var vibration = { # and noise ...
 	},
 	update: func(dt) {
 		var airspeed = me.airspeedN.getValue();
-		if (airspeed > 141) { # overspeed vibration
+		if (airspeed > 120) { # overspeed vibration
 			var frequency = 2000 + 500 * rand();
 			var v = 0.49 + 0.5 * normatan(airspeed - 160, 10);
 			var intensity = v;
@@ -948,6 +946,230 @@ var determine_emblem = func {
 
 
 
+# weapons ===========================================================
+
+# aircraft.weapon.new(
+#	<property>,
+#	<submodel-index>,
+#	<capacity>,
+#	<drop-weight>,		# dropped weight per shot round/missile
+#	<base-weight>		# remaining empty weight
+#	[, <submodel-factor>	# one reported submodel counts for how many items
+#	[, <weight-prop>]]);	# where to put the calculated weight
+var Weapon = {
+	new: func(prop, ndx, cap, dropw, basew, fac = 1, wprop = nil) {
+		var m = { parents: [Weapon] };
+		m.node = aircraft.makeNode(prop);
+		m.enabledN = m.node.getNode("enabled", 1);
+		m.enabledN.setBoolValue(0);
+
+		m.triggerN = m.node.getNode("trigger", 1);
+		m.triggerN.setBoolValue(0);
+
+		m.countN = m.node.getNode("count", 1);
+		m.countN.setIntValue(0);
+
+		m.sm_countN = props.globals.getNode("ai/submodels/submodel[" ~ ndx ~ "]/count", 1);
+		m.sm_countN.setValue(0);
+
+		m.capacity = cap;
+		m.dropweight = dropw * 2.2046226;	# kg2lbs
+		m.baseweight = basew * 2.2046226;
+		m.ratio = fac;
+
+		if (wprop != nil)
+			m.weightN = aircraft.makeNode(wprop);
+		else
+			m.weightN = m.node.getNode("weight-lb", 1);
+		return m;
+	},
+	enable: func {
+		me.fire(0);
+		me.enabledN.setBoolValue(arg[0]);
+		me.update();
+		me;
+	},
+	setammo: func {
+		me.sm_countN.setValue(arg[0] / me.ratio);
+		me.update();
+		me;
+	},
+	getammo: func {
+		me.countN.getValue();
+	},
+	getweight: func {
+		me.weightN.getValue();
+	},
+	reload: func {
+		me.fire(0);
+		me.setammo(me.capacity);
+		me;
+	},
+	update: func {
+		if (me.enabledN.getValue()) {
+			me.countN.setValue(me.sm_countN.getValue() * me.ratio);
+			me.weightN.setValue(me.baseweight + me.countN.getValue() * me.dropweight);
+		} else {
+			me.countN.setValue(0);
+			me.weightN.setValue(0);
+		}
+	},
+	fire: func(t) {
+		me.triggerN.setBoolValue(t);
+		if (t)
+			me._loop_();
+	},
+	_loop_: func {
+		me.update();
+		if (me.triggerN.getBoolValue() and me.enabledN.getValue() and me.countN.getValue())
+			settimer(func me._loop_(), 1);
+	},
+};
+
+
+# "name", <ammo-desc>
+var WeaponSystem = {
+	new: func(name, adesc) {
+		var m = { parents: [WeaponSystem] };
+		m.name = name;
+		m.ammunition_type = adesc;
+		m.weapons = [];
+		m.enabled = 0;
+		m.select = 0;
+		return m;
+	},
+	add: func {
+		append(me.weapons, arg[0]);
+	},
+	reload: func {
+		me.select = 0;
+		foreach (w; me.weapons)
+			w.reload();
+	},
+	fire: func {
+		foreach (w; me.weapons)
+			w.fire(arg[0]);
+	},
+	getammo: func {
+		var n = 0;
+		foreach (w; me.weapons)
+			n += w.getammo();
+		return n;
+	},
+	ammodesc: func {
+		me.ammunition_type;
+	},
+	disable: func {
+		me.enabled = 0;
+		foreach (w; me.weapons)
+			w.enable(0);
+	},
+	enable: func {
+		me.select = 0;
+		foreach (w; me.weapons) {
+			w.enable(1);
+			w.reload();
+		}
+		me.enabled = 1;
+	},
+};
+
+
+var weapons = nil;
+var MG = nil;
+var HOT = nil;
+var TRIGGER = -1;
+
+var init_weapons = func {
+	MG = WeaponSystem.new("M134", "rounds (7.62 mm)");
+	# propellant: 2.98 g + bullet: 9.75 g  ->  0.0127 kg
+	# M134 minigun: 18.8 kg + M27 armament subsystem: ??  ->
+	MG.add(Weapon.new("sim/model/bo105/weapons/MG[0]", 0, 4000, 0.0127, 100, 10));
+	MG.add(Weapon.new("sim/model/bo105/weapons/MG[1]", 1, 4000, 0.0127, 100, 10));
+
+	HOT = WeaponSystem.new("HOT", "missiles");
+	# 24 kg; missile + tube: 32 kg
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[0]", 2, 1, 24, 20));
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[1]", 3, 1, 24, 20));
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[2]", 4, 1, 24, 20));
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[3]", 5, 1, 24, 20));
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[4]", 6, 1, 24, 20));
+	HOT.add(Weapon.new("sim/model/bo105/weapons/HOT[5]", 7, 1, 24, 20));
+
+	HOT.fire = func(trigger) {
+		if (!trigger or me.select >= size(me.weapons))
+			return;
+
+		var wp = me.weapons[me.select];
+		wp.fire(1);
+		settimer(func wp.fire(0), 1.5);
+		var weight = wp.weightN.getValue();
+		wp.weightN.setValue(weight + 300);	# shake the bo
+		settimer(func wp.weightN.setValue(weight), 0.3);
+		me.select += 1;
+	}
+
+	setlistener("/sim/model/bo105/weapons/impact/HOT", func(n) {
+		var node = props.globals.getNode(n.getValue(), 1);
+		var impact = geo.Coord.new().set_latlon(
+				node.getNode("impact/latitude-deg").getValue(),
+				node.getNode("impact/longitude-deg").getValue(),
+				node.getNode("impact/elevation-m").getValue());
+
+		geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
+		#geo.put_model("Models/Power/coolingtower.xml", impact,
+				node.getNode("impact/heading-deg").getValue(),
+				node.getNode("impact/pitch-deg").getValue(),
+				node.getNode("impact/roll-deg").getValue());
+		screen.log.write(sprintf("%.3f km",
+				geo.aircraft_position().distance_to(impact) / 1000), 1, 0.9, 0.9);
+
+		fgcommand("play-audio-sample", props.Node.new({
+			path : getprop("/sim/fg-root") ~ "/Aircraft/bo105/Sounds",
+			file : "HOT.wav",
+			volume : 0.2,
+		}));
+	});
+
+	#setlistener("/sim/model/bo105/weapons/impact/MG", func(n) {
+	#	var node = props.globals.getNode(n.getValue(), 1);
+	#	geo.put_model("Models/Airport/ils.xml",
+	#			node.getNode("impact/latitude-deg").getValue(),
+	#			node.getNode("impact/longitude-deg").getValue(),
+	#			node.getNode("impact/elevation-m").getValue(),
+	#			node.getNode("impact/heading-deg").getValue(),
+	#			node.getNode("impact/pitch-deg").getValue(),
+	#			node.getNode("impact/roll-deg").getValue());
+	#});
+
+	var triggerL = setlistener("controls/armament/trigger", func(n) {
+		if (weapons != nil) {
+			var t = n.getBoolValue();
+			if (!getprop("/sim/ai/enabled")) {
+				print("*** weapons work only with --prop:sim/ai/enabled=1 ***");
+				return removelistener(triggerL);
+			}
+			if (t != TRIGGER)
+				weapons.fire(TRIGGER = t);
+		}
+	});
+
+	controls.applyBrakes = func(v) setprop("controls/armament/trigger", v);
+}
+
+
+# called from Dialogs/config.xml
+var get_ammunition = func {
+	weapons != nil ? weapons.getammo() ~ " " ~ weapons.ammodesc() : "";
+}
+
+
+var reload = func {
+	if (weapons != nil)
+		weapons.reload();
+}
+
+
 
 # view management ===================================================
 
@@ -1061,7 +1283,7 @@ var reconfigure = func {
 var delta_time = props.globals.getNode("/sim/time/delta-sec", 1);
 var hi_heading = props.globals.getNode("/instrumentation/heading-indicator/indicated-heading-deg", 1);
 var vertspeed = props.globals.initNode("/velocities/vertical-speed-fps");
-var gross_weight_lb = props.globals.initNode("/yasim/gross-weight-lbs");
+var gross_weight_lb = props.globals.initNode("/fdm/yasim/gross-weight-lbs");
 var gross_weight_kg = props.globals.initNode("/sim/model/gross-weight-kg");
 props.globals.getNode("/instrumentation/adf/rotation-deg", 1).alias(hi_heading);
 
@@ -1071,7 +1293,7 @@ var main_loop = func {
 	if (replay)
 		setprop("/position/gear-agl-m", getprop("/position/altitude-agl-ft") * 0.3 - 1.2);
 	vert_speed_fpm.setDoubleValue(vertspeed.getValue() * 60);
-	gross_weight_kg.setDoubleValue(gross_weight_lb.getValue() * LB2KG);
+	gross_weight_kg.setDoubleValue(gross_weight_lb.getValue() or 0 * LB2KG);
 
 
 	var dt = delta_time.getValue();
@@ -1099,13 +1321,14 @@ setlistener("/sim/signals/fdm-initialized", func {
 	if (!first_init) return;
 	first_init = 0;
 
-	gui.menuEnable("autopilot", 1);
+	gui.menuEnable("autopilot", 0);
 	init_rotoranim();
 	vibration.init();
 	engines.init();
 	fuel.init();
 	mouse.init();
 
+	init_weapons();
 	setlistener("/sim/model/livery/file", reconfigure, 1);
 
 	collective.setDoubleValue(1);

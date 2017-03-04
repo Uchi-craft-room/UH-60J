@@ -5,7 +5,7 @@
 
 		<description>Mitsubishi UH-60J (YASim)</description>
 		<author>Hitoshi Uchida(3D/FDM)</author>
-		<status>v1.2</status>
+		<status>v1.3</status>
 		<flight-model>yasim</flight-model>
 		<aero>UH-60J</aero>
 		<fuel-fraction>0.5</fuel-fraction>
