@@ -5,7 +5,7 @@
 
 		<description>Mitsubishi UH-60J (YASim)</description>
 		<author>Hitoshi Uchida(3D/FDM)</author>
-		<status>v1.3</status>
+		<status>v1.4</status>
 		<flight-model>yasim</flight-model>
 		<aero>UH-60J</aero>
 		<fuel-fraction>0.5</fuel-fraction>
@@ -405,6 +405,58 @@
 				</binding>
 			</key>
 
+			<key n="98">
+			  <name>b</name>
+			  <desc>Apply all brakes</desc>
+				<binding>
+					<command>nasal</command>
+					<script>interpolate("/controls/gear/brake-left", 1.0, 0.5)</script>
+				</binding>
+				<binding>
+					<command>nasal</command>
+                                        <script>interpolate("/controls/gear/brake-right", 1.0, 0.5)</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>interpolate("/controls/gear/brake-left", 0.0, 0.5)</script>
+					</binding>
+					<binding>
+						<command>nasal</command>
+                                                <script>interpolate("/controls/gear/brake-right", 0.0, 0.5)</script>
+					</binding>
+				</mod-up>
+			 </key>
+
+		 <key n="44">
+		  <name>,</name>
+		  <desc>Left brake</desc>
+			<binding>
+				<command>nasal</command>
+				<script>interpolate("/controls/gear/brake-left", 1.0, 0.5)</script>
+			</binding>
+			<mod-up>
+			<binding>
+				<command>nasal</command>
+				<script>interpolate("/controls/gear/brake-left", 0.0, 0.5)</script>
+			</binding>
+			</mod-up>
+		 </key>
+
+		 <key n="46">
+ 		 <name>.</name>
+ 		 <desc>Right brake</desc>
+			<binding>
+				<command>nasal</command>
+				<script>interpolate("/controls/gear/brake-right", 1.0, 0.5)</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>nasal</command>
+					<script>interpolate("/controls/gear/brake-right", 0.0, 0.5)</script>
+				</binding>
+			</mod-up>
+ 		</key>
 
 		</keyboard>
 	</input>
