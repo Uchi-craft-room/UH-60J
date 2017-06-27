@@ -1116,7 +1116,7 @@ var init_weapons = func {
 				node.getNode("impact/longitude-deg").getValue(),
 				node.getNode("impact/elevation-m").getValue());
 
-		geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
+		#geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
 		#geo.put_model("Models/Power/coolingtower.xml", impact,
 				node.getNode("impact/heading-deg").getValue(),
 				node.getNode("impact/pitch-deg").getValue(),
@@ -1248,7 +1248,7 @@ setlistener("/sim/startup/ysize", adjust_fov, 1);
 
 # livery/configuration ==============================================
 
-aircraft.livery.init("Aircraft/bo105/Models/Variants", "sim/model/bo105/name");
+#aircraft.livery.init("Aircraft/bo105/Models/Variants", "sim/model/bo105/name");
 
 var reconfigure = func {
 	if (weapons != nil) {
@@ -1313,7 +1313,7 @@ var replay = 0;
 var crashed = 0;
 var rc_emblem = determine_emblem();
 var doors = Doors.new();
-var config_dialog = gui.Dialog.new("/sim/gui/dialogs/bo105/config/dialog", "Aircraft/bo105/Dialogs/config.xml");
+var config_dialog = gui.Dialog.new("/sim/gui/dialogs/bo105/config/dialog", "Aircraft/Uh-60J/Dialogs/config.xml");
 
 var first_init = 1;
 
