@@ -1116,7 +1116,7 @@ var init_weapons = func {
 				node.getNode("impact/longitude-deg").getValue(),
 				node.getNode("impact/elevation-m").getValue());
 
-		#geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
+		geo.put_model("Aircraft/bo105/Models/hot.ac", impact,
 		#geo.put_model("Models/Power/coolingtower.xml", impact,
 				node.getNode("impact/heading-deg").getValue(),
 				node.getNode("impact/pitch-deg").getValue(),
