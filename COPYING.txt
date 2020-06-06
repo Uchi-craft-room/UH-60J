@@ -1,6 +1,6 @@
 	　　　　GNU GENERAL PUBLIC LICENSE
              FlightGear Model UH-60J 
- Copyright (C) 2016 Uchi craft room / Hitoshi Uchida
+ Copyright (C) 2018 Uchi craft room / Hitoshi Uchida
                        
 one line to give the program's name and an idea of what it does.
 Copyright (C) yyyy  name of author
@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 (訳: 
           FlightGear Model UH-60J
-Copyright (C) 2016 Uchi craft room / Hitoshi Uchida
+Copyright (C) 2018 Uchi craft room / Hitoshi Uchida
 
 このプログラムはフリーソフトウェアです。あなたはこれを、フリーソフトウェ
 ア財団によって発行された GNU 一般公衆利用許諾契約書(バージョン2か、希
@@ -47,8 +47,7 @@ Temple Place, Suite 330, Boston, MA 02111-1307 USA)
 
 ・本データに関する情報は当方が運営する下記サイトにて公開
 　しています。
-　Web Site : http://www.hm9.aitai.ne.jp/~uchinmat/
-
+　Web Site : http://uchi-craft-room.blog.enjoy.jp/website/
 ・お問い合わせ
 　Hitoshi Uchida
-  mail : uchinmat@hm9.aitai.ne.jp
+  mail : uchinmat@hi3.enjoy.ne.jp

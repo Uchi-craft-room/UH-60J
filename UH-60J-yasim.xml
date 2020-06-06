@@ -172,7 +172,7 @@
         <control-input axis="/controls/gear/brake-parking" control="BRAKE" />
  </gear>
 
-   <hook x="-0.419" y="0.000" z="-1.999" length="0.1" down-angle="90" up-angle="0">
+   <hook x="-0.419" y="0.000" z="-1.999" length="0.4" down-angle="90" up-angle="0">
         <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
         <control-output control="HEXTEND" prop="/gear/tailhook/position-norm"/>
         <control-speed control="HEXTEND" transition-time="5"/>

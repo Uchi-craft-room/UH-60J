@@ -923,6 +923,16 @@
     </offsets>
   </model>
 
+    <model>
+        <name>nav-light-left</name>
+        <path>effects/lights/procedural_light_nav_left.xml</path>
+        <offsets>
+      <x-m> -1.336 </x-m>
+      <y-m> -2.890 </y-m>
+      <z-m> -0.131</z-m>
+        </offsets>
+    </model>
+
   <model>
     <path>Aircraft/UH-60J/Models/light/GreenLight.xml</path>
     <offsets>
@@ -931,6 +941,16 @@
       <z-m> -0.131</z-m>
     </offsets>
   </model>
+
+    <model>
+        <name>nav-light-right</name>
+        <path>effects/lights/procedural_light_nav_right.xml</path>
+        <offsets>
+      <x-m> -1.336 </x-m>
+      <y-m> 2.890 </y-m>
+      <z-m> -0.131</z-m>
+        </offsets>
+    </model>
 
 
 
@@ -944,9 +964,25 @@
     </offsets>
   </model>
 
+   <model>
+        <name>nav-light-tail</name>
+        <path>effects/lights/procedural_light_nav_tail.xml</path>
+        <offsets>
+      <x-m> 10.859 </x-m>
+      <y-m> -0.000 </y-m>
+      <z-m> 1.296 </z-m>
+      <pitch-deg> 0.00 </pitch-deg>
+      <heading-deg> 180 </heading-deg>
+        </offsets>
+    </model>
+
+
   <animation>
     <type>select</type>
+     <object-name>nav-light-left</object-name>
+     <object-name>nav-light-right</object-name>
     <object-name>Tail-Light</object-name>
+    <object-name>nav-light-tail</object-name>
     <condition>
           <property>controls/lighting/nav-lights</property>
     </condition>
@@ -1020,10 +1056,21 @@
     </offsets>
   </model>
 
+   <model>
+        <name>LandingLight-prc</name>
+        <path>effects/lights/procedural_light_nav_tail.xml</path>
+        <offsets>
+      <x-m> -3.50</x-m>
+      <y-m>  -0.6 </y-m>
+      <z-m> -2.1 </z-m>
+        </offsets>
+    </model>
+
   <animation>
     <type>select</type>
      <object-name>Landing-Light</object-name>
      <object-name>LandingLight</object-name>
+     <object-name>LandingLight-prc</object-name>
     <condition>
         <equals>
           <property>controls/switches/landing-light</property>
@@ -1050,19 +1097,30 @@
   <model>
     <name>Light-cone-AIR</name>
     <path>Aircraft/UH-60J/Models/light/light-cone.xml</path>
-    <offsets>
-       <x-m> -3.45</x-m>
-      <y-m>  0.7 </y-m>
-      <z-m> -2.1 </z-m>
-      <pitch-deg> 0.00 </pitch-deg>
-    </offsets>
+	<offsets>
+		<x-m> -3.45</x-m>
+		<y-m>  0.7 </y-m>
+		<z-m> -2.1 </z-m>
+		<pitch-deg> 0.00 </pitch-deg>
+ 	</offsets>
   </model>
+
+   <model>
+        <name>LandingLight-AIR-prc</name>
+        <path>effects/lights/procedural_light_nav_tail.xml</path>
+        <offsets>
+		<x-m> -3.45</x-m>
+		<y-m>  0.7 </y-m>
+		<z-m> -2.1 </z-m>
+        </offsets>
+    </model>
 
   <animation>
     <type>select</type>
     <object-name>LandingLight-AIR</object-name>
     <object-name>Light-cone-AIR</object-name>
     <object-name>AIR_HD</object-name>
+    <object-name>LandingLight-AIR-prc</object-name>
     <condition>
           <property>controls/switches/AIR_HD-light</property>
     </condition>

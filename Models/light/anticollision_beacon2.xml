@@ -18,7 +18,7 @@
     <condition>
       <and>
         <property>controls/lighting/beacon</property>
-        <property>lightpack/beacon-state/state</property>
+            <property>/sim/model/lights/beacon/state</property>
         <not><property>sim/crashed</property></not>
       </and>
     </condition>
@@ -55,7 +55,7 @@
             </entry>
             <entry>
                 <ind>20</ind>
-                <dep>5</dep>
+                <dep>2</dep>
             </entry>
             <entry>
                 <ind>5000</ind>

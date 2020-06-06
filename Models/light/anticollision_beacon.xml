@@ -58,7 +58,7 @@
     <condition>
       <and>
         <property>controls/lighting/beacon</property>
-        <property>lightpack/beacon-state/state</property>
+            <property>/sim/model/lights/beacon/state</property>
         <not><property>sim/crashed</property></not>
       </and>
     </condition>
